@@ -102,6 +102,7 @@ abstract class Model{
         }
     }
 
+
     final protected function insertFirstSection($firstSectionData = array(), $is_die = false){
         try{
             $this->sql = "INSERT INTO ";

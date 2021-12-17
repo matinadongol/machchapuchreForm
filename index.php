@@ -414,7 +414,7 @@ $beneficialOwner = new BeneficialOwner();
             </div>
             <div class="col-lg-3">
                 <p><b>Name Of Bank / बैंकको नाम <span class="red">*</span></b></p>
-                <select name="bank" id="bank">
+                <select onchange="dropdown()" name="bank" id="bank">
                     <?php
                 $all_bank = $bank->getAllBank();
                 //debugger($all_bank);
@@ -424,7 +424,7 @@ $beneficialOwner = new BeneficialOwner();
                 if($all_bank){
                     foreach($all_bank as $key=>$bank_info){
                 ?>
-                    <option value="<?php echo $bank_info->id; ?>"><?php echo $bank_info->bank; ?></option>
+                    <option value="<?php echo $bank_info->bank_id; ?>"><?php echo $bank_info->bank; ?></option>
 
                     <?php    
                     }
@@ -434,22 +434,7 @@ $beneficialOwner = new BeneficialOwner();
             </div>
             <div class="col-lg-3">
                 <p><b>Name Of Branch / शाखा को नाम <span class="red">*</span></b></p>
-                <select name="branch" id="branch">
-                    <?php
-                $all_branch = $branch->getAllBranch();
-                //debugger($all_branch);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_branch){
-                    foreach($all_branch as $key=>$branch_info){
-                ?>
-                    <option value="<?php echo $branch_info->id; ?>"><?php echo $branch_info->branch; ?></option>
-
-                    <?php    
-                    }
-                }
-                ?>
+                <select disabled name="branch" id="branch">
                 </select>
             </div>
         </div>
@@ -688,7 +673,7 @@ $beneficialOwner = new BeneficialOwner();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>VDC-Municipality/ गाविस - नगरपालिका <span class="red">*</span></b></p>
-                    <input type="text" class="inputTextField" name="guardian_vdv" id="guardian_vdc">
+                    <input type="text" class="inputTextField" name="guardian_vdc" id="guardian_vdc">
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Block No / ब्लक नं <span class="red">*</span></b></p>

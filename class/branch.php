@@ -5,15 +5,19 @@ class Branch extends Model{
         $this->table('branch');
     }
 
-    public function getBranchById($id){
-        $attr = array(
-            'where' => array('id'=> $id)
-        );
-        return $this->select($attr);
+    // public function getBranchById($id){
+    //     $attr = array(
+    //         'where' => array('id'=> $id)
+    //     );
+    //     return $this->select($attr);
+    // }
+
+    public function getBranchById(){
+        return $this->selectBranch();
     }
 
-    public function getAllBranch(){
-        return $this->select();
-    }
+    // public function getAllBranch(){
+    //     return $this->selectBranch();
+    // }
 }
 ?>
