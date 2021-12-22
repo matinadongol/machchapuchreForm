@@ -33,14 +33,20 @@ $(document).ready(function() {
 </script>
 <script type="text/javascript">
 function isAMinor() {
-    if ($('#isMinor').is(":checked")) {
-        $("#minorSection").show();
-        console.log("is a minor");
-    } else {
-        $("#minorSection").hide();
-        console.log("not a minor");
-    }
-
+    document.getElementById('minorSection').style.display = 'block';
+    //console.log("is a minor");
+}
+function notAMinor() {
+    document.getElementById('minorSection').style.display = 'none';
+    //console.log("not a minor");
+}
+function isANominee() {
+    document.getElementById('nomimeeDetail').style.display = 'block';
+    //console.log("is a minor");
+}
+function notANominee() {
+    document.getElementById('nomimeeDetail').style.display = 'none';
+    //console.log("not a minor");
 }
 </script>
 <script type="text/javascript">

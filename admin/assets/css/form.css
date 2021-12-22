@@ -47,3 +47,11 @@ select{
 .saveButton{
     margin: 1% 0;
 }
+
+#nomimeeDetail{
+    display: none;
+}
+
+#minorSection{
+    display: none;
+}

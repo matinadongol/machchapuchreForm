@@ -104,6 +104,34 @@ if(isset($_POST) && !empty($_POST)){
     //nominee details
     $nomineeDetailsData = array();
     $nomineeDetailsData['nominee'] = sanitize($_POST['nominee']);
+    $nomineeDetailsData['nomimeeName'] = sanitize($_POST['nomimeeName']);
+    $nomineeDetailsData['nomineeFathersName'] = sanitize($_POST['nomineeFathersName']);
+    $nomineeDetailsData['nomineeRelationship'] = sanitize($_POST['nomineeRelationship']);
+    $nomineeDetailsData['referenceDocument'] = sanitize($_POST['referenceDocument']);
+    $nomineeDetailsData['nomineeDoc'] = sanitize($_POST['nomineeDoc']);
+    $nomineeDetailsData['placeOfIssue'] = sanitize($_POST['placeOfIssue']);
+    $nomineeDetailsData['nomineeIssueYear'] = sanitize($_POST['nomineeIssueYear']);
+    $nomineeDetailsData['nomineeAge'] = sanitize($_POST['nomineeAge']);
+    $nomineeDetailsData['nominee_zone'] = sanitize($_POST['nominee_zone']);
+    $nomineeDetailsData['nominee_district'] = sanitize($_POST['nominee_district']);
+    $nomineeDetailsData['nominee_phoneno'] = sanitize($_POST['nominee_phoneno']);
+    $nomineeDetailsData['nominee_mobileno'] = sanitize($_POST['nominee_mobileno']);
+    $nomineeDetailsData['nominee_email'] = sanitize($_POST['nominee_email']);
+    $nomineeDetailsData['nominee_panno'] = sanitize($_POST['nominee_panno']);
+    $nomineeDetailsData['nominee_correspondenceAddress'] = sanitize($_POST['nominee_correspondenceAddress']);
+
+    if(isset($_FILES['nomineePhoto']) && !empty($_FILES['nomineePhoto']) && $_FILES['nomineePhoto']['error'] == 0){
+        $nomineeDetailsData['nomineePhoto'] = uploadSingleFile($_FILES['nomineePhoto'], 'nomineePhoto');
+    }
+    if(isset($_FILES['nomineeSignature']) && !empty($_FILES['nomineeSignature']) && $_FILES['nomineeSignature']['error'] == 0){
+        $nomineeDetailsData['nomineeSignature'] = uploadSingleFile($_FILES['nomineeSignature'], 'nomineeSignature');
+    }
+    if(isset($_FILES['nomineeDocumentFront']) && !empty($_FILES['nomineeDocumentFront']) && $_FILES['nomineeDocumentFront']['error'] == 0){
+        $nomineeDetailsData['nomineeDocumentFront'] = uploadSingleFile($_FILES['nomineeDocumentFront'], 'nomineeDocumentFront');
+    }
+    if(isset($_FILES['nomineeDocumentBack']) && !empty($_FILES['nomineeDocumentBack']) && $_FILES['nomineeDocumentBack']['error'] == 0){
+        $nomineeDetailsData['nomineeDocumentBack'] = uploadSingleFile($_FILES['nomineeDocumentBack'], 'nomineeDocumentBack');
+    }
 
     //other documents
     $otherDocumentsData = array();

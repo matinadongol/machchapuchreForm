@@ -10,11 +10,9 @@ require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/gender.php';
 require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/income.php';
 require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/occupationType.php';;
 require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/province.php';
+require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/referenceDocument.php';
 require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/title.php';
 require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/zone.php';
-
-require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/firstSection.php';
-require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/beneficialowner.php';
 
 
 $bank = new Bank();
@@ -27,10 +25,8 @@ $income = new Income();
 $occupationType = new OccupationType();
 $province = new Province();
 $title = new Title();
+$referenceDocument = new ReferenceDocument();
 $zone = new Zone();
-
-$firstSection = new FirstSection();
-$beneficialOwner = new BeneficialOwner();
 ?>
 <div class="heading text-center">
     <h2 class="mainheading">Account Opening Form for Individual Benificial Owner</h2>
@@ -49,10 +45,10 @@ $beneficialOwner = new BeneficialOwner();
             </div>
             <div class="col-lg-3">
                 <p><b>Minor / नाबालक <span class="red">*</span></b></p>
-                <input type="checkbox" id="isMinor" name="minor" value="minor" onchange="isAMinor()"
+                <input type="radio" id="isMinor" name="minor" value="minor" onclick="isAMinor()"
                     <?php if (isset($minor) && $minor=="minor") $_POST['minor'];?> />
                 <label for="html">Yes / हो</label><br>
-                <input type="checkbox" id="notMinor" name="minor" value="notMinor"
+                <input type="radio" id="notMinor" name="minor" value="notMinor" checked="checked" onclick="notAMinor()"
                     <?php if (isset($minor) && $minor=="notMinor") $_POST['minor'];?> />
                 <label for="html">No / होईन</label>
             </div>
@@ -343,7 +339,7 @@ $beneficialOwner = new BeneficialOwner();
             </div>
             <div class="col-lg-3">
                 <p><b>Citizenship Issue Date (BS) / नागरिकता जारी मिति ( वि . सं ) <span class="red">*</span></b></p>
-                <input type="date" class="inputTextField" name="CitizenshipIssueDateBS" id="CitizenshipIssueDateBS">
+                <input type="text" class="inputTextField" name="CitizenshipIssueDateBS" id="CitizenshipIssueDateBS">
             </div>
             <div class="col-lg-3">
                 <p><b>Citizenship Issue Date (AD) / नागरिकता जारी मिति ( इस्वी सम्बतमा ) <span class="red">*</span></b>
@@ -352,7 +348,7 @@ $beneficialOwner = new BeneficialOwner();
             </div>
             <div class="col-lg-3 mt-3">
                 <p><b>DOB (BS) / जन्म मिति ( वि . सं ) <span class="red">*</span></b></p>
-                <input type="date" class="inputTextField" name="DOBBS" id="DOBBS">
+                <input type="text" class="inputTextField" name="DOBBS" id="DOBBS">
             </div>
             <div class="col-lg-3 mt-3">
                 <p><b>DOB (AD) / जन्म मिति ( इस्वी सम्बतमा ) <span class="red">*</span></b></p>
@@ -399,7 +395,8 @@ $beneficialOwner = new BeneficialOwner();
                 if($all_bankAccountType){
                     foreach($all_bankAccountType as $key=>$bankAccountType_info){
                 ?>
-                    <option value="<?php echo $bankAccountType_info->id; ?>"><?php echo $bankAccountType_info->bankAccountType; ?>
+                    <option value="<?php echo $bankAccountType_info->id; ?>">
+                        <?php echo $bankAccountType_info->bankAccountType; ?>
                     </option>
 
                     <?php    
@@ -521,14 +518,169 @@ $beneficialOwner = new BeneficialOwner();
         <div class="subheading">
             <h4>Nominee Detail / ईच्छाईको विवरण</h4>
         </div>
-        <div class="row sectionrow">
-            <div class="col-lg-3">
-                <input type="radio" id="Yes" name="nominee" value="is_nominee"
-                    <?php if (isset($nominee) && $nominee=="is_nominee") $_POST['nominee'];?> />
-                <label for="html">Yes &nbsp; &nbsp;</label>
-                <input type="radio" id="No" name="nominee" value="not_nominee"
-                    <?php if (isset($nominee) && $nominee=="not_nominee") $_POST['nominee'];?> />
-                <label for="html">No</label>
+        <div class="my-3">
+            <input type="radio" id="nominee" name="nominee" value="is_nominee" onclick="isANominee()"
+                <?php if (isset($nominee) && $nominee=="is_nominee") $_POST['nominee'];?> />
+            <label for="html">Yes</label>
+            <input type="radio" id="notnominee" name="nominee" value="not_nominee" checked="checked"
+                onclick="notANominee()" <?php if (isset($nominee) && $nominee=="not_nominee") $_POST['nominee'];?> />
+            <label for="html">No / होईन</label>
+        </div>
+        <div id="nomimeeDetail">
+            <div class="row sectionrow">
+                <div class="col-lg-3">
+                    <p><b>Name English / नाम <span class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nomimeeName" id="nomimeeName">
+                </div>
+                <div class="col-lg-3">
+                    <p><b>Father's Name / बुवाको नाम <span class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nomineeFathersName" id="nomineeFathersName">
+                </div>
+                <div class="col-lg-3">
+                    <p><b>Relationship / सम्बन्ध <span class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nomineeRelationship" id="nomineeRelationship">
+                </div>
+                <div class="col-lg-3">
+                    <p><b>Reference Document Type / कागजात प्रकार <span class="red">*</span></b></p>
+                    <select name="referenceDocument" id="referenceDocument">
+                        <?php
+                        $all_referenceDocument = $referenceDocument->getAllReferenceDocument();
+                        //debugger($all_referenceDocument);
+                        ?>
+                        <option value="" disabled selected>-- Select Any One --</option>
+                        <?php
+                        if($all_referenceDocument){
+                            foreach($all_referenceDocument as $key=>$referenceDocument_info){
+                        ?>
+                        <option value="<?php echo $referenceDocument_info->id; ?>">
+                            <?php echo $referenceDocument_info->referencedocument; ?>
+                        </option>
+
+                        <?php    
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Citizenship / Passport / Birth Certificate (नागरिकता / पासपोर्ट / जन्म प्रमाणपत्र) <span
+                                class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nomineeDoc" id="nomineeDoc">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Place of Issue / जारी को स्थान <span class="red">*</span></b></p>
+                    <select name="placeOfIssue" id="placeOfIssue">
+                        <?php
+                        $all_district = $district->getAllDistrict();
+                        //debugger($all_district);
+                        ?>
+                        <option value="" disabled selected>-- Select Any One --</option>
+                        <?php
+                        if($all_district){
+                            foreach($all_district as $key=>$district_info){
+                        ?>
+                        <option value="<?php echo $district_info->id; ?>"><?php echo $district_info->district; ?>
+                        </option>
+
+                        <?php    
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Issue Year <span class="red">*</span></b></p>
+                    <input type="date" class="inputTextField" name="nomineeIssueYear" id="nomineeIssueYear">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Age <span class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nomineeAge" id="nomineeAge">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Zone / अञ्चल <span class="red">*</span></b></p>
+                    <select name="nominee_zone" id="nominee_zone">
+                        <?php
+                        $all_nomineeZone = $zone->getAllZone();
+                        //debugger($all_nomineeZone);
+                        ?>
+                        <option value="" disabled selected>-- Select Any One --</option>
+                        <?php
+                        if($all_nomineeZone){
+                            foreach($all_nomineeZone as $key=>$nomineeZone_info){
+                        ?>
+                        <option value="<?php echo $nomineeZone_info->id; ?>"><?php echo $nomineeZone_info->zone; ?>
+                        </option>
+
+                        <?php    
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>District / जिल्ला <span class="red">*</span></b></p>
+                    <select name="nominee_district" id="nominee_district">
+                        <?php
+                        $all_nomineeDistrict = $district->getAllDistrict();
+                        //debugger($all_nomineeDistrict);
+                        ?>
+                        <option value="" disabled selected>-- Select Any One --</option>
+                        <?php
+                        if($all_nomineeDistrict){
+                            foreach($all_nomineeDistrict as $key=>$nomineeDistrict_info){
+                        ?>
+                        <option value="<?php echo $nomineeDistrict_info->id; ?>">
+                            <?php echo $nomineeDistrict_info->district; ?></option>
+
+                        <?php    
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Phone No / फोन नम्बर</b></p>
+                    <input type="text" class="inputTextField" name="nominee_phoneno" id="nominee_phoneno">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Mobile No / मोबाइल नम्बर (10 digits) <span class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nominee_mobileno" id="nominee_mobileno">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Email / ईमेल <span class="red">*</span></b></p>
+                    <input type="email" class="inputTextField" name="nominee_email" id="nominee_email">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Pan No / प्यान नम्बर</b></p>
+                    <input type="text" class="inputTextField" name="nominee_panno" id="nominee_panno">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Correspondence Address <span class="red">*</span></b></p>
+                    <input type="text" class="inputTextField" name="nominee_correspondenceAddress"
+                        id="nominee_correspondenceAddress">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Nominee Photo / फोटो<span class="red">*</span></b></p>
+                    <input type="file" class="inputTextField" name="nomineePhoto"
+                        id="nomineePhoto">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Nominee Signature / हस्ताक्षर<span class="red">*</span></b></p>
+                    <input type="file" class="inputTextField" name="nomineeSignature"
+                        id="nomineeSignature">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Nominee Birth Certificate / Citizenship (Front)
+                            जन्म प्रमाणपत्र वा नागरिकता (अगाडि)<span class="red">*</span></b></p>
+                    <input type="file" class="inputTextField" name="nomineeDocumentFront"
+                        id="nomineeDocumentFront">
+                </div>
+                <div class="col-lg-3 mt-3">
+                    <p><b>Nominee Birth Certificate / Citizenship (Back)
+                            जन्म प्रमाणपत्र वा नागरिकता (पछाडि)<span class="red">*</span></b></p>
+                    <input type="file" class="inputTextField" name="nomineeDocumentBack"
+                        id="nomineeDocumentBack">
+                </div>
             </div>
         </div>
         <div class="subheading">
@@ -723,7 +875,7 @@ $beneficialOwner = new BeneficialOwner();
                 <div class="col-lg-3 mt-3">
                     <p><b>Citizenship Issue Date (BS) / नागरिकता जारी मिति ( वि . सं ) <span class="red">*</span></b>
                     </p>
-                    <input type="date" class="inputTextField" name="guardian_citizenshipIssueDateBS"
+                    <input type="text" class="inputTextField" name="guardian_citizenshipIssueDateBS"
                         id="guardian_citizenshipIssueDateBS">
                 </div>
                 <div class="col-lg-3 mt-3">
@@ -735,7 +887,7 @@ $beneficialOwner = new BeneficialOwner();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>DOB (BS) / जन्म मिति ( वि . सं ) <span class="red">*</span></b></p>
-                    <input type="date" class="inputTextField" name="guardian_DOBBS" id="guardian_DOBBS">
+                    <input type="text" class="inputTextField" name="guardian_DOBBS" id="guardian_DOBBS">
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>DOB (AD) / जन्म मिति ( इस्वी सम्बतमा ) <span class="red">*</span></b></p>

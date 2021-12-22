@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2021 at 02:32 PM
+-- Generation Time: Dec 22, 2021 at 02:26 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -226,7 +226,7 @@ CREATE TABLE `bankdetails` (
   `bankAccountno` int(11) DEFAULT NULL,
   `bank` int(11) DEFAULT NULL,
   `branch` int(11) DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -234,7 +234,7 @@ CREATE TABLE `bankdetails` (
 --
 
 INSERT INTO `bankdetails` (`id`, `bankAccountType`, `bankAccountno`, `bank`, `branch`, `status`) VALUES
-(1, 1, 2147483647, 17, 1723, 1);
+(1, 1, 2147483647, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -246,7 +246,7 @@ CREATE TABLE `beneficialowner` (
   `beneficialowner_id` int(11) NOT NULL,
   `title` int(11) DEFAULT NULL,
   `firstName` text NOT NULL,
-  `middleName` text NOT NULL,
+  `middleName` text DEFAULT NULL,
   `lastName` text NOT NULL,
   `fathersName` text NOT NULL,
   `grandFathersName` text NOT NULL,
@@ -258,7 +258,7 @@ CREATE TABLE `beneficialowner` (
 --
 
 INSERT INTO `beneficialowner` (`beneficialowner_id`, `title`, `firstName`, `middleName`, `lastName`, `fathersName`, `grandFathersName`, `mothersName`) VALUES
-(1, 3, 'Matina', 'Devi', 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol');
+(1, 2, 'Nara', 'Devi', 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol');
 
 -- --------------------------------------------------------
 
@@ -7882,7 +7882,7 @@ CREATE TABLE `certificatedetails` (
   `DOBBS` date NOT NULL,
   `DOBAD` date NOT NULL,
   `gender` int(11) DEFAULT NULL,
-  `panno` varchar(50) NOT NULL
+  `panno` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -7890,7 +7890,7 @@ CREATE TABLE `certificatedetails` (
 --
 
 INSERT INTO `certificatedetails` (`id`, `citizenshipNo`, `citizenshipIssueDistrict`, `CitizenshipIssueDateBS`, `CitizenshipIssueDateAD`, `DOBBS`, `DOBAD`, `gender`, `panno`) VALUES
-(1, '32165456', 3, '2021-12-10', '2021-12-02', '2021-12-03', '2021-12-04', 1, '65465465456');
+(1, '32165456', 2, '2054-11-12', '2021-12-01', '2054-11-12', '2021-12-02', 1, '65465465456');
 
 -- --------------------------------------------------------
 
@@ -7906,8 +7906,8 @@ CREATE TABLE `correspondenceaddress` (
   `correspondence_vdc` text NOT NULL,
   `correspondence_tole` text NOT NULL,
   `correspondence_ward` int(10) NOT NULL,
-  `correspondence_blockno` int(10) NOT NULL,
-  `correspondence_phoneno` int(10) NOT NULL,
+  `correspondence_blockno` int(10) DEFAULT NULL,
+  `correspondence_phoneno` int(10) DEFAULT NULL,
   `correspondence_mobileno` int(10) NOT NULL,
   `correspondence_email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -7917,7 +7917,7 @@ CREATE TABLE `correspondenceaddress` (
 --
 
 INSERT INTO `correspondenceaddress` (`id`, `correspondence_province`, `correspondence_zone`, `correspondence_district`, `correspondence_vdc`, `correspondence_tole`, `correspondence_ward`, `correspondence_blockno`, `correspondence_phoneno`, `correspondence_mobileno`, `correspondence_email`) VALUES
-(1, 3, 5, 3, 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
+(1, 1, 1, 1, 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -8125,7 +8125,7 @@ CREATE TABLE `guardiandetails` (
 --
 
 INSERT INTO `guardiandetails` (`id`, `guardianFirstName`, `guardianMiddleName`, `guardianLastName`, `guardianRelation`, `guardianFatherName`, `guardianGrandFatherName`, `guardianSpouseName`, `guardianCitizenshipNo`, `guardianAddress`, `guardian_province`, `guardian_zone`, `guardian_district`, `guardian_vdc`, `guardian_blockNo`, `guardian_ward`, `guardian_phoneno`, `guardian_mobileno`, `guardian_panno`, `guardian_email`, `guardian_citizenshiptIssueDistrict`, `guardian_citizenshipIssueDateBS`, `guardian_citizenshipIssueDateAD`, `guardian_DOBBS`, `guardian_DOBAD`, `guardianPhoto`, `guardianSignature`, `guardianCitizenshipFront`, `guardianCitizenshipBack`, `guardianProof`) VALUES
-(1, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 1, 1, 1, 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 1, '2021-12-02', '2021-12-10', '2021-12-10', '2021-12-07', 'GuardianPhoto-20211217022844318.jpg', 'GuardianSignature-20211217022844802.jpg', 'GuardianCitizenshipFront-20211217022844689.jpg', 'GuardianCitizenshipBack-20211217022844922.jpg', 'GuardianProof-20211217022844742.jpg');
+(1, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 1, 1, 1, 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 1, '2054-11-12', '2021-12-02', '2054-11-12', '2021-12-01', 'GuardianPhoto-20211222022447809.jpg', 'GuardianSignature-20211222022447138.jpg', 'GuardianCitizenshipFront-20211222022447192.jpg', 'GuardianCitizenshipBack-202112220224473.jpg', 'GuardianProof-20211222022447166.jpg');
 
 -- --------------------------------------------------------
 
@@ -8157,15 +8157,34 @@ INSERT INTO `income` (`id`, `income`, `status`) VALUES
 
 CREATE TABLE `nomineedetails` (
   `id` int(11) NOT NULL,
-  `nominee` text NOT NULL
+  `nominee` text NOT NULL,
+  `nomimeeName` text DEFAULT NULL,
+  `nomineeFathersName` text DEFAULT NULL,
+  `nomineeRelationship` text DEFAULT NULL,
+  `referenceDocument` int(11) DEFAULT NULL,
+  `nomineeDoc` varchar(50) DEFAULT NULL,
+  `placeOfIssue` int(11) DEFAULT NULL,
+  `nomineeIssueYear` date DEFAULT NULL,
+  `nomineeAge` int(3) DEFAULT NULL,
+  `nominee_zone` int(11) DEFAULT NULL,
+  `nominee_district` int(11) DEFAULT NULL,
+  `nominee_phoneno` int(10) DEFAULT NULL,
+  `nominee_mobileno` int(10) DEFAULT NULL,
+  `nominee_email` varchar(255) DEFAULT NULL,
+  `nominee_panno` int(20) DEFAULT NULL,
+  `nominee_correspondenceAddress` text DEFAULT NULL,
+  `nomineePhoto` text DEFAULT NULL,
+  `nomineeSignature` text DEFAULT NULL,
+  `nomineeDocumentFront` text DEFAULT NULL,
+  `nomineeDocumentBack` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nomineedetails`
 --
 
-INSERT INTO `nomineedetails` (`id`, `nominee`) VALUES
-(1, 'not_nominee');
+INSERT INTO `nomineedetails` (`id`, `nominee`, `nomimeeName`, `nomineeFathersName`, `nomineeRelationship`, `referenceDocument`, `nomineeDoc`, `placeOfIssue`, `nomineeIssueYear`, `nomineeAge`, `nominee_zone`, `nominee_district`, `nominee_phoneno`, `nominee_mobileno`, `nominee_email`, `nominee_panno`, `nominee_correspondenceAddress`, `nomineePhoto`, `nomineeSignature`, `nomineeDocumentFront`, `nomineeDocumentBack`) VALUES
+(1, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 2, '2021-12-09', 55, 2, 1, 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20211222022447757.jpg', 'NomineeSignature-20211222022447151.jpg', 'NomineeDocumentFront-20211222022447942.jpg', 'NomineeDocumentBack-20211222022447918.jpg');
 
 -- --------------------------------------------------------
 
@@ -8177,9 +8196,9 @@ CREATE TABLE `occupationdetails` (
   `id` int(11) NOT NULL,
   `occupationType` int(11) DEFAULT NULL,
   `businessType` int(11) DEFAULT NULL,
-  `organizationName` text NOT NULL,
-  `organizationAddress` text NOT NULL,
-  `designation` text NOT NULL,
+  `organizationName` text DEFAULT NULL,
+  `organizationAddress` text DEFAULT NULL,
+  `designation` text DEFAULT NULL,
   `income` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -8188,7 +8207,7 @@ CREATE TABLE `occupationdetails` (
 --
 
 INSERT INTO `occupationdetails` (`id`, `occupationType`, `businessType`, `organizationName`, `organizationAddress`, `designation`, `income`) VALUES
-(1, 2, 1, 'Techtronix', 'Lazimpat', 'Developer', 1);
+(1, 3, 1, 'Techtronix', 'Lazimpat', 'Developer', 1);
 
 -- --------------------------------------------------------
 
@@ -8210,7 +8229,15 @@ INSERT INTO `occupationtype` (`id`, `occupationType`, `status`) VALUES
 (1, 'Public Sector', 1),
 (2, 'Private Sector', 1),
 (3, 'Business Person', 1),
-(4, 'Student', 1);
+(4, 'Student', 1),
+(5, 'Farmer', 1),
+(6, 'Retired', 1),
+(7, 'Housewife', 1),
+(8, 'Government Service', 1),
+(9, 'Professional', 1),
+(10, 'Student', 1),
+(11, 'Service', 1),
+(12, 'Others', 1);
 
 -- --------------------------------------------------------
 
@@ -8233,7 +8260,7 @@ CREATE TABLE `otherdocuments` (
 --
 
 INSERT INTO `otherdocuments` (`id`, `applicantPhoto`, `applicantCitizenshipFrontPhoto`, `applicantCitizenshipBackPhoto`, `applicantThumbPhoto`, `applicantLocationMapPhoto`, `applicantSignaturePhoto`) VALUES
-(1, 'ApplicantPhoto-20211217022844963.jpg', 'ApplicantCitizenshipFrontPhoto-20211217022844552.jpg', 'ApplicantCitizenshipBackPhoto-20211217022844460.jpg', 'ApplicantThumbPhoto-20211217022844788.jpg', 'ApplicantLocationMapPhoto-20211217022844468.jpg', 'ApplicantSignaturePhoto-20211217022844309.jpg');
+(1, 'ApplicantPhoto-20211222022447792.jpg', 'ApplicantCitizenshipFrontPhoto-20211222022447661.jpg', 'ApplicantCitizenshipBackPhoto-20211222022447261.jpg', 'ApplicantThumbPhoto-20211222022447745.jpg', 'ApplicantLocationMapPhoto-20211222022447716.jpg', 'ApplicantSignaturePhoto-20211222022447336.jpg');
 
 -- --------------------------------------------------------
 
@@ -8249,8 +8276,8 @@ CREATE TABLE `permanentaddress` (
   `permanent_vdc` text NOT NULL,
   `permanent_tole` text NOT NULL,
   `permanent_ward` int(11) NOT NULL,
-  `permanent_blockno` int(11) NOT NULL,
-  `permanent_phoneno` int(10) NOT NULL,
+  `permanent_blockno` int(11) DEFAULT NULL,
+  `permanent_phoneno` int(10) DEFAULT NULL,
   `permanent_mobileno` int(10) NOT NULL,
   `permanent_email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -8260,7 +8287,7 @@ CREATE TABLE `permanentaddress` (
 --
 
 INSERT INTO `permanentaddress` (`id`, `permanent_province`, `permanent_zone`, `permanent_district`, `permanent_vdc`, `permanent_tole`, `permanent_ward`, `permanent_blockno`, `permanent_phoneno`, `permanent_mobileno`, `permanent_email`) VALUES
-(1, 3, 5, 3, 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
+(1, 1, 1, 1, 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -8286,6 +8313,26 @@ INSERT INTO `province` (`id`, `province`, `status`) VALUES
 (5, 'Lumbini', 1),
 (6, 'Karnali', 1),
 (7, 'Sudurpachhim', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `referencedocument`
+--
+
+CREATE TABLE `referencedocument` (
+  `id` int(11) NOT NULL,
+  `referencedocument` text DEFAULT NULL,
+  `status` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `referencedocument`
+--
+
+INSERT INTO `referencedocument` (`id`, `referencedocument`, `status`) VALUES
+(1, 'Citizenship', 1),
+(2, 'Birth Certificate', 1);
 
 -- --------------------------------------------------------
 
@@ -8459,7 +8506,11 @@ ALTER TABLE `income`
 -- Indexes for table `nomineedetails`
 --
 ALTER TABLE `nomineedetails`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `referenceDocument` (`referenceDocument`),
+  ADD UNIQUE KEY `nominee_zone` (`nominee_zone`),
+  ADD UNIQUE KEY `nominee_district` (`nominee_district`),
+  ADD UNIQUE KEY `placeOfIssue` (`placeOfIssue`);
 
 --
 -- Indexes for table `occupationdetails`
@@ -8495,6 +8546,12 @@ ALTER TABLE `permanentaddress`
 -- Indexes for table `province`
 --
 ALTER TABLE `province`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `referencedocument`
+--
+ALTER TABLE `referencedocument`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -8613,7 +8670,7 @@ ALTER TABLE `occupationdetails`
 -- AUTO_INCREMENT for table `occupationtype`
 --
 ALTER TABLE `occupationtype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `otherdocuments`
@@ -8632,6 +8689,12 @@ ALTER TABLE `permanentaddress`
 --
 ALTER TABLE `province`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `referencedocument`
+--
+ALTER TABLE `referencedocument`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `title`
@@ -8689,15 +8752,15 @@ ALTER TABLE `correspondenceaddress`
 --
 ALTER TABLE `form`
   ADD CONSTRAINT `form_ibfk_1` FOREIGN KEY (`guardianDetails`) REFERENCES `guardiandetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_10` FOREIGN KEY (`correspondenceAddress`) REFERENCES `correspondenceaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_2` FOREIGN KEY (`otherDocuments`) REFERENCES `otherdocuments` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_3` FOREIGN KEY (`certificateDetails`) REFERENCES `certificatedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_4` FOREIGN KEY (`firstSection`) REFERENCES `firstsection` (`firstsection_id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_5` FOREIGN KEY (`beneficialOwner`) REFERENCES `beneficialowner` (`beneficialowner_id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_10` FOREIGN KEY (`otherDocuments`) REFERENCES `otherdocuments` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_2` FOREIGN KEY (`nomineeDetails`) REFERENCES `nomineedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_3` FOREIGN KEY (`correspondenceAddress`) REFERENCES `correspondenceaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_4` FOREIGN KEY (`permanentAddress`) REFERENCES `permanentaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_5` FOREIGN KEY (`firstSection`) REFERENCES `firstsection` (`firstsection_id`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `form_ibfk_6` FOREIGN KEY (`occupationDetails`) REFERENCES `occupationdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_7` FOREIGN KEY (`nomineeDetails`) REFERENCES `nomineedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_8` FOREIGN KEY (`permanentAddress`) REFERENCES `permanentaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_9` FOREIGN KEY (`bankDetails`) REFERENCES `bankdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `form_ibfk_7` FOREIGN KEY (`bankDetails`) REFERENCES `bankdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_8` FOREIGN KEY (`beneficialOwner`) REFERENCES `beneficialowner` (`beneficialowner_id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_9` FOREIGN KEY (`certificateDetails`) REFERENCES `certificatedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `guardiandetails`
@@ -8707,6 +8770,15 @@ ALTER TABLE `guardiandetails`
   ADD CONSTRAINT `guardiandetails_ibfk_2` FOREIGN KEY (`guardian_district`) REFERENCES `district` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `guardiandetails_ibfk_3` FOREIGN KEY (`guardian_province`) REFERENCES `province` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `guardiandetails_ibfk_4` FOREIGN KEY (`guardian_citizenshiptIssueDistrict`) REFERENCES `district` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `nomineedetails`
+--
+ALTER TABLE `nomineedetails`
+  ADD CONSTRAINT `nomineedetails_ibfk_1` FOREIGN KEY (`nominee_zone`) REFERENCES `zone` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `nomineedetails_ibfk_2` FOREIGN KEY (`placeOfIssue`) REFERENCES `district` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `nomineedetails_ibfk_3` FOREIGN KEY (`referenceDocument`) REFERENCES `referencedocument` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `nomineedetails_ibfk_4` FOREIGN KEY (`nominee_district`) REFERENCES `district` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `occupationdetails`
