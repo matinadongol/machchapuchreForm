@@ -89,8 +89,55 @@ abstract class Model{
 
             $data = $this->stmt->fetchAll(PDO::FETCH_OBJ);
 
-            // debugger($args);
+            //  debugger($args);
             // debugger($this->sql, true);
+
+            return $data;
+        } catch(PDOException $e){
+            error_log('PDO, ['.date('Y-m-d H:i:s').']: '.$e->getMessage(), 3, $_SERVER['DOCUMENT_ROOT']. 'error/error.log');
+            return false;
+        } catch(Exception $e){
+            error_log('General, ['.date('Y-m-d H:i:s').']: '.$e->getMessage(), 3, $_SERVER['DOCUMENT_ROOT']. 'error/error.log');
+            return false;
+        }
+    }
+
+    final protected function selectForm($args = array(), $is_die = false){
+        try{
+            $this->sql = "SELECT * from form where id = $id";
+
+            if($is_die){
+                debugger($args);
+                debugger($this->sql, true);
+            }
+            
+            $this->stmt = $this->conn->prepare($this->sql);
+
+            //value bind
+            if(isset($args['where']) && is_array($args['where']) && !empty($args['where'])){
+                foreach($args['where'] as $column_name => $value){
+                    if(is_null($value)){
+                        $param = PDO::PARAM_NULL;
+                    } else if(is_bool($value)){
+                        $param = PDO::PARAM_BOOL;
+                    } else if(is_int($value)){
+                        $param = PDO::PARAM_INT;
+                    } else {
+                        $param = PDO::PARAM_STR;
+                    }
+
+                    if($param){
+                        $this->stmt->bindValue(":".$column_name, $value, $param);
+                    }
+                }
+            }
+
+            $this->stmt->execute();
+
+            $data = $this->stmt->fetchAll(PDO::FETCH_OBJ);
+
+             debugger($args);
+            debugger($this->sql, true);
 
             return $data;
         } catch(PDOException $e){

@@ -25,6 +25,7 @@ $nomineeDetails = new NomineeDetails();
 $guardianDetails = new GuardianDetails();
 $otherDocuments = new OtherDocuments();
 $form = new Form();
+$getForm = new Form();
 
 if(isset($_POST) && !empty($_POST)){
     // debugger($_POST);
@@ -261,6 +262,6 @@ if(isset($_POST) && !empty($_POST)){
     } else {
         redirect('../', 'error', 'Sorry! There was a problem while saving');
     }
-}
+} 
 
 ?>

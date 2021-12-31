@@ -2,7 +2,7 @@
 class Zone extends Model{
     public function __construct(){
         Model::__construct();
-        $this->table('zone');
+        $this->table('zones');
     }
 
     public function getZoneById($id){

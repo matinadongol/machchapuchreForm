@@ -55,3 +55,90 @@ select{
 #minorSection{
     display: none;
 }
+
+/*search box*/
+.select-box, .province-select-box, .zone-select-box, .district-select-box, .permanentProvince-select-box, .permanentZone-select-box, .permanentDistrict-select-box, .citizenshipIssueDistrict-select-box, .placeOfIssue-select-box, .nomineeZone-select-box, .nomineeDistrict-select-box, .guardianProvince-select-box, .guardianZone-select-box, .guardianDistrict-select-box, .guardianIssuedDistrict-select-box{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    position: relative;
+}
+
+.select-box .options-container, .province-select-box .province-options-container, .zone-select-box .zone-options-container, .district-select-box .district-options-container, .permanentProvince-select-box .permanentProvince-options-container, .permanentZone-select-box .permanentZone-options-container, .permanentDistrict-select-box .permanentDistrict-options-container, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container, .placeOfIssue-select-box .placeOfIssue-options-container, .nomineeZone-select-box .nomineeZone-options-container, .nomineeDistrict-select-box .nomineeDistrict-options-container, .guardianProvince-select-box .guardianProvince-options-container, .guardianZone-select-box .guardianZone-options-container, .guardianDistrict-select-box .guardianDistrict-options-container, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container{
+    width: 100%;
+    transition: all .4s;
+    overflow: hidden;
+    border-radius: 2px;
+    max-height: 0;
+    opacity: 0;
+    order: 1;
+}
+
+.select-box .options-container.active, .province-select-box .province-options-container.active, .zone-select-box .zone-options-container.active, .district-select-box .district-options-container.active, .permanentProvince-select-box .permanentProvince-options-container.active, .permanentZone-select-box .permanentZone-options-container.active, .permanentDistrict-select-box .permanentDistrict-options-container.active, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container.active, .placeOfIssue-select-box .placeOfIssue-options-container.active, .nomineeZone-select-box .nomineeZone-options-container.active, .nomineeDistrict-select-box .nomineeDistrict-options-container.active, .guardianProvince-select-box .guardianProvince-options-container.active, .guardianZone-select-box .guardianZone-options-container.active, .guardianDistrict-select-box .guardianDistrict-options-container.active, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container.active{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+    margin-top: 40px;
+}
+
+.select-box .options-container::-webkit-scrollbar, .province-select-box .province-options-container::-webkit-scrollbar, .zone-select-box .zone-options-container::-webkit-scrollbar, .district-select-box .district-options-container::-webkit-scrollbar, .permanentProvince-select-box .permanentProvince-options-container::-webkit-scrollbar, .permanentZone-select-box .permanentZone-options-container::-webkit-scrollbar, .permanentDistrict-select-box .permanentDistrict-options-container::-webkit-scrollbar, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container::-webkit-scrollbar, .placeOfIssue-select-box .placeOfIssue-options-container::-webkit-scrollbar, .nomineeZone-select-box .nomineeZone-options-container::-webkit-scrollbar, .nomineeDistrict-select-box .nomineeDistrict-options-container::-webkit-scrollbar, .guardianProvince-select-box .guardianProvince-options-container::-webkit-scrollbar, .guardianZone-select-box .guardianZone-options-container::-webkit-scrollbar, .guardianDistrict-select-box .guardianDistrict-options-container::-webkit-scrollbar, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container::-webkit-scrollbar{
+    width: 8px;
+    background-color: rgb(211, 211, 211);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb, .province-select-box .province-options-container::-webkit-scrollbar-thumb, .zone-select-box .zone-options-container::-webkit-scrollbar-thumb, .district-select-box .district-options-container::-webkit-scrollbar-thumb, .permanentProvince-select-box .permanentProvince-options-container::-webkit-scrollbar-thumb, .permanentZone-select-box .permanentZone-options-container::-webkit-scrollbar-thumb, .permanentDistrict-select-box .permanentDistrict-options-container::-webkit-scrollbar-thumb, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container::-webkit-scrollbar-thumb, .placeOfIssue-select-box .placeOfIssue-options-container::-webkit-scrollbar-thumb, .nomineeZone-select-box .nomineeZone-options-container::-webkit-scrollbar-thumb, .nomineeDistrict-select-box .nomineeDistrict-options-container::-webkit-scrollbar-thumb, .guardianProvince-select-box .guardianProvince-options-container::-webkit-scrollbar-thumb, .guardianZone-select-box .guardianZone-options-container::-webkit-scrollbar-thumb, .guardianDistrict-select-box .guardianDistrict-options-container::-webkit-scrollbar-thumb, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container::-webkit-scrollbar-thumb{
+    width: 8px;
+    background-color: rgb(163, 163, 163);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .options, .selected, .province-select-box .options, .province-selected, .zone-select-box .options, .zone-selected, .district-select-box .options, .district-selected, .permanentProvince-select-box .options, .permanentProvince-selected, .permanentZone-select-box .options, .permanentZone-selected, .permanentDistrict-select-box .options, .permanentDistrict-selected, .citizenshipIssueDistrict-select-box .options, .citizenshipIssueDistrict-selected, .placeOfIssue-select-box .options, .placeOfIssue-selected, .nomineeZone-select-box .options, .nomineeZone-selected, .nomineeDistrict-select-box .options, .nomineeDistrict-selected, .guardianProvince-select-box .options, .guardianProvince-selected, .guardianZone-select-box .options, .guardianZone-selected, .guardianDistrict-select-box .options, .guardianDistrict-selected, .guardianIssuedDistrict-select-box .options, .guardianIssuedDistrict-selected{
+    padding: 12px;
+    cursor: pointer;
+}
+
+.select-box label, .province-select-box label, .zone-select-box label, .district-select-box label, .permanentProvince-select-box label, .permanentZone-select-box label, .permanentDistrict-select-box label, .citizenshipIssueDistrict-select-box label, .placeOfIssue-select-box label, .nomineeZone-select-box label, .nomineeDistrict-select-box label, .guardianProvince-select-box label, .guardianZone-select-box label, .guardianDistrict-select-box label, .guardianIssuedDistrict-select-box label{
+    cursor: pointer;
+}
+
+.select-box .options:hover, .province-select-box .province-options:hover, .zone-select-box .zone-options:hover, .district-select-box .district-options:hover, .permanentProvince-select-box .permanentProvince-options:hover, .permanentZone-select-box .permanentZone-options:hover, .permanentDistrict-select-box .permanentDistrict-options:hover, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options:hover, .placeOfIssue-select-box .placeOfIssue-options:hover, .nomineeZone-select-box .nomineeZone-options:hover, .nomineeDistrict-select-box .nomineeDistrict-options:hover, .guardianProvince-select-box .guardianProvince-options:hover, .guardianZone-select-box .guardianZone-options:hover, .guardianDistrict-select-box .guardianDistrict-options:hover, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options:hover{
+    background-color: rgb(204, 197, 188);
+}
+
+.select-box .options .radio, .province-select-box .province-options .province-radio, .zone-select-box .zone-options .zone-radio, .district-select-box .district-options .district-radio, .permanentProvince-select-box .permanentProvince-options .permanentProvince-radio, .permanentZone-select-box .permanentZone-options .permanentZone-radio, .permanentDistrict-select-box .permanentDistrict-options .permanentDistrict-radio, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options .citizenshipIssueDistrict-radio, .placeOfIssue-select-box .placeOfIssue-options .placeOfIssue-radio, .nomineeZone-select-box .nomineeZone-options .nomineeZone-radio, .nomineeDistrict-select-box .nomineeDistrict-options .nomineeDistrict-radio, .guardianProvince-select-box .guardianProvince-options .guardianProvince-radio, .guardianZone-select-box .guardianZone-options .guardianZone-radio, .guardianDistrict-select-box .guardianDistrict-options .guardianDistrict-radio, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options .guardianIssuedDistrict-radio{
+    display: none;
+}
+
+.selected, .province-selected, .zone-selected, .district-selected, .permanentProvince-selected, .permanentZone-selected, .permanentDistrict-selected, .citizenshipIssueDistrict-selected, .placeOfIssue-selected, .nomineeZone-selected, .nomineeDistrict-selected, .guardianProvince-selected, .guardianZone-selected, .guardianDistrict-selected, .guardianIssuedDistrict-selected{
+    border-radius: 3px;
+    margin-bottom: 3px;
+    position: relative;
+    order: 0;
+    border: 1px solid #000;
+    padding: 2% !important;
+}
+
+/* .selected::after{
+    content: "";
+} */
+
+.search-box input, .province-search-box input, .zone-search-box input, .district-search-box input, .permanentProvince-search-box input, .permanentZone-search-box input, .permanentDistrict-search-box input, .citizenshipIssueDistrict-search-box input, .placeOfIssue-search-box input, .nomineeZone-search-box input, .nomineeDistrict-search-box input, .guardianProvince-search-box input, .guardianZone-search-box input, .guardianDistrict-search-box input, .guardianIssuedDistrict-search-box input{
+    width: 80%;
+    padding: 5px;
+    position: absolute;
+    border-radius: 8px;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+}
+
+.search-box input:focus, .province-search-box input:focus, .zone-search-box input:focus, .district-search-box input:focus, .permanentProvince-search-box input:focus, .permanentZone-search-box input:focus, .permanentDistrict-search-box input:focus, .citizenshipIssueDistrict-search-box input:focus, .placeOfIssue-search-box input:focus, .nomineeZone-search-box input:focus, .nomineeDistrict-search-box input:focus, .guardianProvince-search-box input:focus, .guardianZone-search-box input:focus, .guardianDistrict-search-box input:focus, .guardianIssuedDistrict-search-box input:focus{
+    outline: none;
+}
+
+.select-box .options-container.active ~ .search-box input, .province-select-box .province-options-container.active ~ .province-search-box input, .zone-select-box .zone-options-container.active ~ .zone-search-box input, .district-select-box .district-options-container.active ~ .district-search-box input, .permanentProvince-select-box .permanentProvince-options-container.active ~ .permanentProvince-search-box input, .permanentZone-select-box .permanentZone-options-container.active ~ .permanentZone-search-box input, .permanentDistrict-select-box .permanentDistrict-options-container.active ~ .permanentDistrict-search-box input, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container.active ~ .citizenshipIssueDistrict-search-box input, .placeOfIssue-select-box .placeOfIssue-options-container.active ~ .placeOfIssue-search-box input, .nomineeZone-select-box .nomineeZone-options-container.active ~ .nomineeZone-search-box input, .nomineeDistrict-select-box .nomineeDistrict-options-container.active ~ .nomineeDistrict-search-box input, .guardianProvince-select-box .guardianProvince-options-container.active ~ .guardianProvince-search-box input, .guardianZone-select-box .guardianZone-options-container.active ~ .guardianZone-search-box input, .guardianDistrict-select-box .guardianDistrict-options-container.active ~ .guardianDistrict-search-box input, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container.active ~ .guardianIssuedDistrict-search-box input{
+    opacity: 1;
+    pointer-events: auto;
+}

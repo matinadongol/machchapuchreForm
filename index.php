@@ -123,62 +123,87 @@ $zone = new Zone();
         <div class="row sectionrow">
             <div class="col-lg-3">
                 <p><b>Province <span class="red">*</span></b></p>
-                <select name="correspondence_province" id="correspondence_province">
-                    <?php
-                $all_province = $province->getAllProvince();
-                //debugger($all_province);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                    if($all_province){
-                    foreach($all_province as $key=>$province_info){
-                ?>
-                    <option value="<?php echo $province_info->id; ?>"><?php echo $province_info->province; ?></option>
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="province-select-box">
+                    <div class="province-options-container">
+                        <?php
+                            $all_province = $province->getAllProvince();
+                            //debugger($all_province);
+                        ?>
+                        <?php
+                             if($all_province){
+                                foreach($all_province as $key=>$province_info){
+                        ?>
+                        <div class="province-options">
+                            <input type="radio" class="province-radio" value="<?php echo $province_info->province;?>">
+                            <label for="correspondence_province"><?php echo $province_info->province; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="province-selected" name="correspondence_province"
+                        placeholder="Select Province" id="correspondence_province">
+                    <div class="province-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>Zone / अञ्चल <span class="red">*</span></b></p>
-                <select name="correspondence_zone" id="correspondence_zone">
-                    <?php
-                $all_zone = $zone->getAllZone();
-                //debugger($all_zone);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_zone){
-                    foreach($all_zone as $key=>$zone_info){
-                ?>
-                    <option value="<?php echo $zone_info->id; ?>"><?php echo $zone_info->zone; ?></option>
-
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="zone-select-box">
+                    <div class="zone-options-container">
+                        <?php
+                            $all_Zone = $zone->getAllZone();
+                            //debugger($all_Zone);
+                        ?>
+                        <?php
+                             if($all_Zone){
+                                foreach($all_Zone as $key=>$Zone_info){
+                        ?>
+                        <div class="zone-options">
+                            <input type="radio" class="zone-radio" value="<?php echo $Zone_info->zone;?>">
+                            <label for="zone"><?php echo $Zone_info->zone; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="zone-selected" name="correspondence_zone" placeholder="Select Zone"
+                        id="correspondence_zone">
+                    <div class="zone-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>District / जिल्ला <span class="red">*</span></b></p>
-                <select name="correspondence_district" id="correspondence_district">
-                    <?php
-                $all_district = $district->getAllDistrict();
-                //debugger($all_district);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_district){
-                    foreach($all_district as $key=>$district_info){
-                ?>
-                    <option value="<?php echo $district_info->id; ?>"><?php echo $district_info->district; ?></option>
-
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="district-select-box">
+                    <div class="district-options-container">
+                        <?php
+                            $all_district = $district->getAllDistrict();
+                            //debugger($all_district);
+                        ?>
+                        <?php
+                             if($all_district){
+                                foreach($all_district as $key=>$district_info){
+                        ?>
+                        <div class="district-options">
+                            <input type="radio" class="district-radio" value="<?php echo $district_info->district;?>">
+                            <label for="correspondence_district"><?php echo $district_info->district; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="district-selected" name="correspondence_district"
+                        placeholder="Select District" id="correspondence_district">
+                    <div class="district-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>VDC-Municipality / गाविस -नगरपालिका <span class="red">*</span></b></p>
@@ -220,65 +245,89 @@ $zone = new Zone();
         <div class="row sectionrow">
             <div class="col-lg-3">
                 <p><b>Province <span class="red">*</span></b></p>
-                <select name="permanent_province" id="permanent_province">
-                    <?php
-                $all_permanentProvince = $province->getAllProvince();
-                //debugger($all_province);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                    if($all_permanentProvince){
-                    foreach($all_permanentProvince as $key=>$permanentProvince_info){
-                ?>
-                    <option value="<?php echo $permanentProvince_info->id; ?>">
-                        <?php echo $permanentProvince_info->province; ?></option>
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="permanentProvince-select-box">
+                    <div class="permanentProvince-options-container">
+                        <?php
+                            $all_province = $province->getAllProvince();
+                            //debugger($all_province);
+                        ?>
+                        <?php
+                             if($all_province){
+                                foreach($all_province as $key=>$province_info){
+                        ?>
+                        <div class="permanentProvince-options">
+                            <input type="radio" class="permanentProvince-radio"
+                                value="<?php echo $province_info->province;?>">
+                            <label for="permanent_province"><?php echo $province_info->province; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="permanentProvince-selected" name="permanent_province"
+                        placeholder="Select Province" id="permanent_province">
+                    <div class="permanentProvince-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>Zone / अञ्चल <span class="red">*</span></b></p>
-                <select name="permanent_zone" id="permanent_zone">
-                    <?php
-                $all_permanentZone = $zone->getAllZone();
-                //debugger($all_permanentZone);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_permanentZone){
-                    foreach($all_permanentZone as $key=>$permanentZone_info){
-                ?>
-                    <option value="<?php echo $permanentZone_info->id; ?>"><?php echo $permanentZone_info->zone; ?>
-                    </option>
-
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="permanentZone-select-box">
+                    <div class="permanentZone-options-container">
+                        <?php
+                            $all_Zone = $zone->getAllZone();
+                            //debugger($all_Zone);
+                        ?>
+                        <?php
+                             if($all_Zone){
+                                foreach($all_Zone as $key=>$Zone_info){
+                        ?>
+                        <div class="permanentZone-options">
+                            <input type="radio" class="permanentZone-radio" value="<?php echo $Zone_info->zone;?>">
+                            <label for="zone"><?php echo $Zone_info->zone; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="permanentZone-selected" name="permanent_zone"
+                        placeholder="Select Permanent Zone" id="permanent_zone">
+                    <div class="permanentZone-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>District / जिल्ला <span class="red">*</span></b></p>
-                <select name="permanent_district" id="permanent_district">
-                    <?php
-                $all_permanentDistrict = $district->getAllDistrict();
-                //debugger($all_permanentDistrict);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_permanentDistrict){
-                    foreach($all_permanentDistrict as $key=>$permanentDistrict_info){
-                ?>
-                    <option value="<?php echo $permanentDistrict_info->id; ?>">
-                        <?php echo $permanentDistrict_info->district; ?></option>
-
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="permanentDistrict-select-box">
+                    <div class="permanentDistrict-options-container">
+                        <?php
+                            $all_permanentDistrict = $district->getAllDistrict();
+                            //debugger($all_permanentDistrict);
+                        ?>
+                        <?php
+                             if($all_permanentDistrict){
+                                foreach($all_permanentDistrict as $key=>$permanentDistrict_info){
+                        ?>
+                        <div class="permanentDistrict-options">
+                            <input type="radio" class="permanentDistrict-radio"
+                                value="<?php echo $permanentDistrict_info->district;?>">
+                            <label for="zone"><?php echo $permanentDistrict_info->district; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="permanentDistrict-selected" name="permanent_district"
+                        placeholder="Select District" id="permanent_district">
+                    <div class="permanentDistrict-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>VDC-Municipality / गाविस -नगरपालिका <span class="red">*</span></b></p>
@@ -319,23 +368,32 @@ $zone = new Zone();
             </div>
             <div class="col-lg-3">
                 <p><b>Citizenship Issue District / नागरिकता जारी जिल्ला <span class="red">*</span></b></p>
-                <select name="citizenshipIssueDistrict" id="citizenshipIssueDistrict">
-                    <?php
-                $all_district = $district->getAllDistrict();
-                //debugger($all_district);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_district){
-                    foreach($all_district as $key=>$district_info){
-                ?>
-                    <option value="<?php echo $district_info->id; ?>"><?php echo $district_info->district; ?></option>
-
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
+                <div class="citizenshipIssueDistrict-select-box">
+                    <div class="citizenshipIssueDistrict-options-container">
+                        <?php
+                        $all_district = $district->getAllDistrict();
+                        //debugger($all_district);
+                    ?>
+                        <?php
+                             if($all_district){
+                                foreach($all_district as $key=>$district_info){
+                        ?>
+                        <div class="citizenshipIssueDistrict-options">
+                            <input type="radio" class="citizenshipIssueDistrict-radio"
+                                value="<?php echo $district_info->district;?>">
+                            <label for="zone"><?php echo $district_info->district; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="citizenshipIssueDistrict-selected" name="citizenshipIssueDistrict"
+                        placeholder="Select District" id="citizenshipIssueDistrict">
+                    <div class="citizenshipIssueDistrict-search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
                 <p><b>Citizenship Issue Date (BS) / नागरिकता जारी मिति ( वि . सं ) <span class="red">*</span></b></p>
@@ -411,23 +469,31 @@ $zone = new Zone();
             </div>
             <div class="col-lg-3">
                 <p><b>Name Of Bank / बैंकको नाम <span class="red">*</span></b></p>
-                <select onchange="dropdown()" name="bank" id="bank">
-                    <?php
-                $all_bank = $bank->getAllBank();
-                //debugger($all_bank);
-                ?>
-                    <option value="" disabled selected>-- Select Any One --</option>
-                    <?php
-                if($all_bank){
-                    foreach($all_bank as $key=>$bank_info){
-                ?>
-                    <option value="<?php echo $bank_info->bank_id; ?>"><?php echo $bank_info->bank; ?></option>
+                <div class="select-box">
+                    <div class="options-container">
+                        <?php
+                            $all_bank = $bank->getAllBank();
+                            //debugger($all_bank);
+                        ?>
+                        <?php
+                            if($all_bank){
+                                foreach($all_bank as $key=>$bank_info){
+                        ?>
+                        <div class="options">
+                            <input type="radio" class="radio" value="<?php echo $bank_info->bank;?>">
+                            <label for="bank"><?php echo $bank_info->bank; ?></label>
+                        </div>
+                        <?php    
+                                }
+                            }
+                            ?>
+                    </div>
+                    <input type="text" class="selected" name="bank" Value="Select Bank" id="banks">
+                    <div class="search-box">
+                        <input type="text" placeholder="search...">
+                    </div>
+                </div>
 
-                    <?php    
-                    }
-                }
-                ?>
-                </select>
             </div>
             <div class="col-lg-3">
                 <p><b>Name Of Branch / शाखा को नाम <span class="red">*</span></b></p>
@@ -569,24 +635,32 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Place of Issue / जारी को स्थान <span class="red">*</span></b></p>
-                    <select name="placeOfIssue" id="placeOfIssue">
-                        <?php
-                        $all_district = $district->getAllDistrict();
-                        //debugger($all_district);
+                    <div class="placeOfIssue-select-box">
+                        <div class="placeOfIssue-options-container">
+                            <?php
+                            $all_district = $district->getAllDistrict();
+                            //debugger($all_district);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_district){
-                            foreach($all_district as $key=>$district_info){
+                            <?php
+                             if($all_district){
+                                foreach($all_district as $key=>$district_info){
                         ?>
-                        <option value="<?php echo $district_info->id; ?>"><?php echo $district_info->district; ?>
-                        </option>
-
-                        <?php    
+                            <div class="placeOfIssue-options">
+                                <input type="radio" class="placeOfIssue-radio"
+                                    value="<?php echo $district_info->district;?>">
+                                <label for="correspondence_district"><?php echo $district_info->district; ?></label>
+                            </div>
+                            <?php    
+                                }
                             }
-                        }
-                        ?>
-                    </select>
+                            ?>
+                        </div>
+                        <input type="text" class="placeOfIssue-selected" name="placeOfIssue"
+                            placeholder="Select issued District" id="placeOfIssue">
+                        <div class="placeOfIssue-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Issue Year <span class="red">*</span></b></p>
@@ -598,45 +672,61 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Zone / अञ्चल <span class="red">*</span></b></p>
-                    <select name="nominee_zone" id="nominee_zone">
-                        <?php
-                        $all_nomineeZone = $zone->getAllZone();
-                        //debugger($all_nomineeZone);
+                    <div class="nomineeZone-select-box">
+                        <div class="nomineeZone-options-container">
+                            <?php
+                            $all_nomineeZone = $zone->getAllZone();
+                            //debugger($all_nomineeZone);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_nomineeZone){
-                            foreach($all_nomineeZone as $key=>$nomineeZone_info){
+                            <?php
+                            if($all_nomineeZone){
+                                foreach($all_nomineeZone as $key=>$nomineeZone_info){
                         ?>
-                        <option value="<?php echo $nomineeZone_info->id; ?>"><?php echo $nomineeZone_info->zone; ?>
-                        </option>
-
-                        <?php    
+                            <div class="nomineeZone-options">
+                                <input type="radio" class="nomineeZone-radio"
+                                    value="<?php echo $nomineeZone_info->zone;?>">
+                                <label for="nomineeZone"><?php echo $nomineeZone_info->zone; ?></label>
+                            </div>
+                            <?php    
+                                }
                             }
-                        }
-                        ?>
-                    </select>
+                            ?>
+                        </div>
+                        <input type="text" class="nomineeZone-selected" name="nominee_zone" placeholder="Select Zone"
+                            id="nominee_zone">
+                        <div class="nomineeZone-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>District / जिल्ला <span class="red">*</span></b></p>
-                    <select name="nominee_district" id="nominee_district">
-                        <?php
-                        $all_nomineeDistrict = $district->getAllDistrict();
-                        //debugger($all_nomineeDistrict);
+                    <div class="nomineeDistrict-select-box">
+                        <div class="nomineeDistrict-options-container">
+                            <?php
+                            $all_nomineeDistrict = $district->getAllDistrict();
+                            //debugger($all_nomineeDistrict);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_nomineeDistrict){
-                            foreach($all_nomineeDistrict as $key=>$nomineeDistrict_info){
+                            <?php
+                             if($all_nomineeDistrict){
+                                foreach($all_nomineeDistrict as $key=>$nomineeDistrict_info){
                         ?>
-                        <option value="<?php echo $nomineeDistrict_info->id; ?>">
-                            <?php echo $nomineeDistrict_info->district; ?></option>
-
-                        <?php    
+                            <div class="nomineeDistrict-options">
+                                <input type="radio" class="nomineeDistrict-radio"
+                                    value="<?php echo $nomineeDistrict_info->district;?>">
+                                <label for="nominee_district"><?php echo $nomineeDistrict_info->district; ?></label>
+                            </div>
+                            <?php    
+                                }
                             }
-                        }
-                        ?>
-                    </select>
+                            ?>
+                        </div>
+                        <input type="text" class="nomineeDistrict-selected" name="nominee_district"
+                            placeholder="Select District" id="nominee_district">
+                        <div class="nomineeDistrict-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Phone No / फोन नम्बर</b></p>
@@ -661,25 +751,21 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Nominee Photo / फोटो<span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="nomineePhoto"
-                        id="nomineePhoto">
+                    <input type="file" class="inputTextField" name="nomineePhoto" id="nomineePhoto">
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Nominee Signature / हस्ताक्षर<span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="nomineeSignature"
-                        id="nomineeSignature">
+                    <input type="file" class="inputTextField" name="nomineeSignature" id="nomineeSignature">
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Nominee Birth Certificate / Citizenship (Front)
                             जन्म प्रमाणपत्र वा नागरिकता (अगाडि)<span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="nomineeDocumentFront"
-                        id="nomineeDocumentFront">
+                    <input type="file" class="inputTextField" name="nomineeDocumentFront" id="nomineeDocumentFront">
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Nominee Birth Certificate / Citizenship (Back)
                             जन्म प्रमाणपत्र वा नागरिकता (पछाडि)<span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="nomineeDocumentBack"
-                        id="nomineeDocumentBack">
+                    <input type="file" class="inputTextField" name="nomineeDocumentBack" id="nomineeDocumentBack">
                 </div>
             </div>
         </div>
@@ -764,64 +850,90 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Province <span class="red">*</span></b></p>
-                    <select name="guardian_province" id="guardian_province">
-                        <?php
-                        $all_province = $province->getAllProvince();
-                        //debugger($all_province);
+                    <div class="guardianProvince-select-box">
+                        <div class="guardianProvince-options-container">
+                            <?php
+                            $all_province = $province->getAllProvince();
+                            //debugger($all_province);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_province){
-                        foreach($all_province as $key=>$province_info){
+                            <?php
+                             if($all_province){
+                                foreach($all_province as $key=>$province_info){
                         ?>
-                        <option value="<?php echo $province_info->id; ?>"><?php echo $province_info->province; ?>
-                        </option>
-                        <?php    
-                    }
-                }
-                ?>
-                    </select>
+                            <div class="guardianProvince-options">
+                                <input type="radio" class="guardianProvince-radio"
+                                    value="<?php echo $province_info->province;?>">
+                                <label for="guardian_province"><?php echo $province_info->province; ?></label>
+                            </div>
+                            <?php    
+                                }
+                            }
+                            ?>
+                        </div>
+                        <input type="text" class="guardianProvince-selected" name="guardian_province"
+                            placeholder="Select Province" id="guardian_province">
+                        <div class="guardianProvince-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Zone / अञ्चल <span class="red">*</span></b></p>
-                    <select name="guardian_zone" id="guardian_zone">
-                        <?php
-                        $all_zone = $zone->getAllZone();
-                        //debugger($all_zone);
+                    <div class="guardianZone-select-box">
+                        <div class="guardianZone-options-container">
+                            <?php
+                            $all_zone = $zone->getAllZone();
+                            //debugger($all_zone);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_zone){
-                            foreach($all_zone as $key=>$zone_info){
+                            <?php
+                            if($all_zone){
+                                foreach($all_zone as $key=>$zone_info){
                         ?>
-                        <option value="<?php echo $zone_info->id; ?>"><?php echo $zone_info->zone; ?></option>
-
-                        <?php    
-                    }
-                }
-                ?>
-                    </select>
+                            <div class="guardianZone-options">
+                                <input type="radio" class="guardianZone-radio"
+                                    value="<?php echo $zone_info->zone;?>">
+                                <label for="guardianZone"><?php echo $zone_info->zone; ?></label>
+                            </div>
+                            <?php    
+                                }
+                            }
+                            ?>
+                        </div>
+                        <input type="text" class="guardianZone-selected" name="guardian_zone" placeholder="Select Zone"
+                            id="guardian_zone">
+                        <div class="guardianZone-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>District / जिल्ला <span class="red">*</span></b></p>
-                    <select name="guardian_district" id="guardian_district">
-                        <?php
-                        $all_district = $district->getAllDistrict();
-                        //debugger($all_district);
+                    <div class="guardianDistrict-select-box">
+                        <div class="guardianDistrict-options-container">
+                            <?php
+                            $all_district = $district->getAllDistrict();
+                            //debugger($all_district);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_district){
-                            foreach($all_district as $key=>$district_info){
+                            <?php
+                             if($all_district){
+                                foreach($all_district as $key=>$district_info){
                         ?>
-                        <option value="<?php echo $district_info->id; ?>"><?php echo $district_info->district; ?>
-                        </option>
-
-                        <?php    
+                            <div class="guardianDistrict-options">
+                                <input type="radio" class="guardianDistrict-radio"
+                                    value="<?php echo $district_info->district;?>">
+                                <label for="guardian_district"><?php echo $district_info->district; ?></label>
+                            </div>
+                            <?php    
+                                }
                             }
-                        }
-                        ?>
-                    </select>
+                            ?>
+                        </div>
+                        <input type="text" class="guardianDistrict-selected" name="guardian_district"
+                            placeholder="Select District" id="guardian_district">
+                        <div class="guardianDistrict-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>VDC-Municipality/ गाविस - नगरपालिका <span class="red">*</span></b></p>
@@ -853,24 +965,32 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Citizenship Issued District/नागरिकता जारी जिल्ला <span class="red">*</span></b></p>
-                    <select name="guardian_citizenshiptIssueDistrict" id="guardian_citizenshiptIssueDistrict">
-                        <?php
-                        $all_district = $district->getAllDistrict();
-                        //debugger($all_district);
+                    <div class="guardianIssuedDistrict-select-box">
+                        <div class="guardianIssuedDistrict-options-container">
+                            <?php
+                            $all_district = $district->getAllDistrict();
+                            //debugger($all_district);
                         ?>
-                        <option value="" disabled selected>-- Select Any One --</option>
-                        <?php
-                        if($all_district){
-                            foreach($all_district as $key=>$district_info){
+                            <?php
+                             if($all_district){
+                                foreach($all_district as $key=>$district_info){
                         ?>
-                        <option value="<?php echo $district_info->id; ?>"><?php echo $district_info->district; ?>
-                        </option>
-
-                        <?php    
+                            <div class="guardianIssuedDistrict-options">
+                                <input type="radio" class="guardianIssuedDistrict-radio"
+                                    value="<?php echo $district_info->district;?>">
+                                <label for="guardian_district"><?php echo $district_info->district; ?></label>
+                            </div>
+                            <?php    
+                                }
                             }
-                        }
-                        ?>
-                    </select>
+                            ?>
+                        </div>
+                        <input type="text" class="guardianIssuedDistrict-selected" name="guardian_citizenshiptIssueDistrict"
+                            placeholder="Select District" id="guardian_citizenshiptIssueDistrict">
+                        <div class="guardianIssuedDistrict-search-box">
+                            <input type="text" placeholder="search...">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <p><b>Citizenship Issue Date (BS) / नागरिकता जारी मिति ( वि . सं ) <span class="red">*</span></b>

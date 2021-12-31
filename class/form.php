@@ -9,16 +9,16 @@ class Form extends Model{
         return $this->insertForm();
     }
 
-    // public function getAllForm(){
-    //     return $this->selectForm();
-    // }
+    public function getAllForm(){
+        return $this->selectForm();
+    }
 
-    // public function getFormById($id){
-    //     $attr = array(
-    //         'where' => array('id'=> $id)
-    //     );
-    //     return $this->select($attr);
-    // }
+    public function getFormById($id){
+        $args = array(
+            'where' => array('id'=> $id)
+        );
+        return $this->selectForm($args);
+    }
 
     // public function deleteForm($id){
     //     $attr = array(
