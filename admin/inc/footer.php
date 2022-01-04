@@ -9,6 +9,7 @@
 
 <script type="text/javascript">
 <?php
+    include "admin/assets/js/formdesign.js";
     include "admin\assets\js\province.js";
     include "admin\assets\js\zone.js";
     include "admin\assets\js\district.js";

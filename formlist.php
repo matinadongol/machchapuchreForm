@@ -14,12 +14,13 @@ require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/model.php';
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        
             <?php
                 $result = mysqli_query($conn,"SELECT beneficialOwner.firstName, beneficialOwner.middleName, beneficialOwner.lastName, form.id as id from beneficialOwner join form on beneficialOwner.beneficialowner_id = form.id;") or die( mysqli_error($conn));
                 $counts = 1;
                 while($row = mysqli_fetch_array($result)) {
             ?>
+            <tbody>
             <td> <?php  echo $counts;?></td>
             <td><?php echo $row["id"]; ?></td>
             <td><?php 
@@ -36,12 +37,13 @@ require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/model.php';
                 ?>
                 <a href="<?php echo $url; ?>" class="btn btn-success">View</a>
             </td>
+            </tbody>
             <?php        
                     
                 $counts++;   
                 }
             ?>
-        </tbody>
+        
     </table>
 </div>
 <?php

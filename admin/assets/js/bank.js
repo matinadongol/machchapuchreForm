@@ -4,10 +4,13 @@ const searchBox = document.querySelector(".search-box input");
 const optionsList = document.querySelectorAll(".options");
 selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
+    console.log("unle");
 });
 
 optionsList.forEach(o => {
+    console.log("unle");
     o.addEventListener("click", () => {
+        
         //selected.innerHTML = o.querySelector("label").innerHTML;
         selected.value = o.querySelector("label").innerHTML;
         //document.getElementByClass("selected").value = o.querySelector("label").innerHTML;

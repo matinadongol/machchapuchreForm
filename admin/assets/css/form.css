@@ -2,6 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.font-20{
+    font-size: 20px;
+}
+
+.font-22{
+    font-size: 22px;
+    margin-top: 10px !important;
 }
 
 .heading{
@@ -10,14 +20,32 @@
     padding: 1%;
 }
 
-.subheading{
-    background-color: #134072;
-    color: #fff;
-    padding: .5%; 
+.note{
+    width: 100%;
+    margin: auto;
+    padding: 1%;
+    font-size: 16px !important;
 }
 
-.sectionrow{
-    padding: 2% 0; 
+.note h4{
+    font-size: 18px !important;
+}
+
+.subheading{
+    border-bottom: 5px solid #134072;
+    color: #134072;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: .5%; 
+    margin-bottom: 3%;
+}
+
+.subheading h4{
+    font-size: 30px !important;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .red{
@@ -25,23 +53,12 @@
 }
 
 select{
-    width: 250px;
-    height: 35px;
-}
-
-.inputTextField{
-    width: 250px;
-    height: 35px;
-}
-
-.sampleimage{
-    width: 200px;
-    height: 200px;
-}
-
-.sampleimage img{
     width: 100%;
-    height: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+.radiobuttons{
+    width: 15px !important;
 }
 
 .saveButton{
@@ -60,7 +77,7 @@ select{
 .select-box, .province-select-box, .zone-select-box, .district-select-box, .permanentProvince-select-box, .permanentZone-select-box, .permanentDistrict-select-box, .citizenshipIssueDistrict-select-box, .placeOfIssue-select-box, .nomineeZone-select-box, .nomineeDistrict-select-box, .guardianProvince-select-box, .guardianZone-select-box, .guardianDistrict-select-box, .guardianIssuedDistrict-select-box{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
     position: relative;
 }
 
@@ -72,13 +89,18 @@ select{
     max-height: 0;
     opacity: 0;
     order: 1;
+    background-color: #ffffff;
+    padding-left: 2%;
+    position: absolute;
 }
 
 .select-box .options-container.active, .province-select-box .province-options-container.active, .zone-select-box .zone-options-container.active, .district-select-box .district-options-container.active, .permanentProvince-select-box .permanentProvince-options-container.active, .permanentZone-select-box .permanentZone-options-container.active, .permanentDistrict-select-box .permanentDistrict-options-container.active, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container.active, .placeOfIssue-select-box .placeOfIssue-options-container.active, .nomineeZone-select-box .nomineeZone-options-container.active, .nomineeDistrict-select-box .nomineeDistrict-options-container.active, .guardianProvince-select-box .guardianProvince-options-container.active, .guardianZone-select-box .guardianZone-options-container.active, .guardianDistrict-select-box .guardianDistrict-options-container.active, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container.active{
     max-height: 240px;
     opacity: 1;
     overflow-y: scroll;
-    margin-top: 40px;
+    margin-top: 100px;
+    z-index: 1000 !important;
+    
 }
 
 .select-box .options-container::-webkit-scrollbar, .province-select-box .province-options-container::-webkit-scrollbar, .zone-select-box .zone-options-container::-webkit-scrollbar, .district-select-box .district-options-container::-webkit-scrollbar, .permanentProvince-select-box .permanentProvince-options-container::-webkit-scrollbar, .permanentZone-select-box .permanentZone-options-container::-webkit-scrollbar, .permanentDistrict-select-box .permanentDistrict-options-container::-webkit-scrollbar, .citizenshipIssueDistrict-select-box .citizenshipIssueDistrict-options-container::-webkit-scrollbar, .placeOfIssue-select-box .placeOfIssue-options-container::-webkit-scrollbar, .nomineeZone-select-box .nomineeZone-options-container::-webkit-scrollbar, .nomineeDistrict-select-box .nomineeDistrict-options-container::-webkit-scrollbar, .guardianProvince-select-box .guardianProvince-options-container::-webkit-scrollbar, .guardianZone-select-box .guardianZone-options-container::-webkit-scrollbar, .guardianDistrict-select-box .guardianDistrict-options-container::-webkit-scrollbar, .guardianIssuedDistrict-select-box .guardianIssuedDistrict-options-container::-webkit-scrollbar{
@@ -111,12 +133,9 @@ select{
 }
 
 .selected, .province-selected, .zone-selected, .district-selected, .permanentProvince-selected, .permanentZone-selected, .permanentDistrict-selected, .citizenshipIssueDistrict-selected, .placeOfIssue-selected, .nomineeZone-selected, .nomineeDistrict-selected, .guardianProvince-selected, .guardianZone-selected, .guardianDistrict-selected, .guardianIssuedDistrict-selected{
-    border-radius: 3px;
-    margin-bottom: 3px;
-    position: relative;
     order: 0;
-    border: 1px solid #000;
     padding: 2% !important;
+    position: unset;
 }
 
 /* .selected::after{

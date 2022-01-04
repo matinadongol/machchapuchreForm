@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2021 at 01:53 PM
+-- Generation Time: Jan 04, 2022 at 08:12 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -223,9 +223,9 @@ INSERT INTO `bankaccounttype` (`id`, `bankAccountType`, `status`) VALUES
 CREATE TABLE `bankdetails` (
   `id` int(11) NOT NULL,
   `bankAccountType` int(11) DEFAULT NULL,
-  `bankAccountno` int(11) DEFAULT NULL,
   `bank` varchar(255) DEFAULT NULL,
   `branch` varchar(255) DEFAULT NULL,
+  `bankAccountno` varchar(50) NOT NULL,
   `status` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -233,8 +233,9 @@ CREATE TABLE `bankdetails` (
 -- Dumping data for table `bankdetails`
 --
 
-INSERT INTO `bankdetails` (`id`, `bankAccountType`, `bankAccountno`, `bank`, `branch`, `status`) VALUES
-(10000, 1, 2147483647, 'Ace Development Bank Ltd', 'Ace Development Bank Ltd.- Kaushaltar Branch', 1);
+INSERT INTO `bankdetails` (`id`, `bankAccountType`, `bank`, `branch`, `bankAccountno`, `status`) VALUES
+(10000, 1, 'Ace Development Bank Ltd', 'Ace Development Bank Ltd.- Pyuthan Branch', '45645678686', 1),
+(10001, 1, 'Ace Development Bank Ltd', 'Ace Development Bank Ltd.- Pyuthan Branch', '45645678686', 1);
 
 -- --------------------------------------------------------
 
@@ -258,7 +259,8 @@ CREATE TABLE `beneficialowner` (
 --
 
 INSERT INTO `beneficialowner` (`beneficialowner_id`, `title`, `firstName`, `middleName`, `lastName`, `fathersName`, `grandFathersName`, `mothersName`) VALUES
-(10000, 1, 'Rayan', 'Krishna', 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol');
+(10000, 3, 'Matina', 'Devi', 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol'),
+(10001, 1, 'Rakshak', 'Lal', 'Maharjan', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol');
 
 -- --------------------------------------------------------
 
@@ -7843,7 +7845,8 @@ CREATE TABLE `certificatedetails` (
 --
 
 INSERT INTO `certificatedetails` (`id`, `citizenshipNo`, `citizenshipIssueDistrict`, `CitizenshipIssueDateBS`, `CitizenshipIssueDateAD`, `DOBBS`, `DOBAD`, `gender`, `panno`) VALUES
-(10000, '32165456/6546548', 'Achham', '2054-11-12', '2021-12-03', '2054-11-12', '2021-12-11', 3, '65465465456');
+(10000, '32165456/6546548', 'Achham', '2054-11-12', '2022-01-07', '2054-11-12', '2021-12-30', 1, '65465465456'),
+(10001, '32165456/6546548', 'Achham', '2054-11-12', '2022-01-07', '2054-11-12', '2022-01-06', 1, '65465465456');
 
 -- --------------------------------------------------------
 
@@ -7870,7 +7873,8 @@ CREATE TABLE `correspondenceaddress` (
 --
 
 INSERT INTO `correspondenceaddress` (`id`, `correspondence_province`, `correspondence_zone`, `correspondence_district`, `correspondence_vdc`, `correspondence_tole`, `correspondence_ward`, `correspondence_blockno`, `correspondence_phoneno`, `correspondence_mobileno`, `correspondence_email`) VALUES
-(10000, 'Karnali', 'Bheri', 'Arghakhanchi', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
+(10000, 'Bagmati', 'Bheri', 'Achham', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com'),
+(10001, 'Gandaki', 'Dhaulagiri', 'Arghakhanchi', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -7984,7 +7988,8 @@ CREATE TABLE `firstsection` (
 --
 
 INSERT INTO `firstsection` (`firstsection_id`, `accountType`, `minor`, `meroShareService`, `maritalStatus`) VALUES
-(10000, 'Individual', 'minor', 'Yes', 'Unmarried');
+(10000, 'Individual', 'minor', 'Yes', 'Married'),
+(10001, 'NonResidentNepalese', 'minor', 'Yes', 'Married');
 
 -- --------------------------------------------------------
 
@@ -8011,7 +8016,8 @@ CREATE TABLE `form` (
 --
 
 INSERT INTO `form` (`id`, `firstSection`, `beneficialOwner`, `correspondenceAddress`, `permanentAddress`, `certificateDetails`, `bankDetails`, `occupationDetails`, `nomineeDetails`, `guardianDetails`, `otherDocuments`) VALUES
-(10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000);
+(10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000),
+(10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001);
 
 -- --------------------------------------------------------
 
@@ -8078,7 +8084,8 @@ CREATE TABLE `guardiandetails` (
 --
 
 INSERT INTO `guardiandetails` (`id`, `guardianFirstName`, `guardianMiddleName`, `guardianLastName`, `guardianRelation`, `guardianFatherName`, `guardianGrandFatherName`, `guardianSpouseName`, `guardianCitizenshipNo`, `guardianAddress`, `guardian_province`, `guardian_zone`, `guardian_district`, `guardian_vdc`, `guardian_blockNo`, `guardian_ward`, `guardian_phoneno`, `guardian_mobileno`, `guardian_panno`, `guardian_email`, `guardian_citizenshiptIssueDistrict`, `guardian_citizenshipIssueDateBS`, `guardian_citizenshipIssueDateAD`, `guardian_DOBBS`, `guardian_DOBAD`, `guardianPhoto`, `guardianSignature`, `guardianCitizenshipFront`, `guardianCitizenshipBack`, `guardianProof`) VALUES
-(10000, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 'Bagmati', 'Bagmati', 'Banke', 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 'Achham', '2054-11-12', '2021-12-03', '2054-11-12', '2021-12-10', 'GuardianPhoto-20211231015033178.jpg', 'GuardianSignature-20211231015033755.jpg', 'GuardianCitizenshipFront-2021123101503322.jpg', 'GuardianCitizenshipBack-20211231015033880.jpg', 'GuardianProof-20211231015033308.jpg');
+(10000, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 'Bagmati', 'Bagmati', 'Arghakhanchi', 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 'Achham', '2054-11-12', '2022-01-07', '2054-11-12', '2021-12-30', 'GuardianPhoto-20220104080743117.jpg', 'GuardianSignature-20220104080743438.jpg', 'GuardianCitizenshipFront-20220104080743917.jpg', 'GuardianCitizenshipBack-20220104080743385.jpg', 'GuardianProof-20220104080743150.jpg'),
+(10001, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 'Bagmati', 'Bheri', 'Baglung', 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 'Achham', '2054-11-12', '2022-01-14', '2054-11-12', '2022-01-14', 'GuardianPhoto-20220104081130364.jpg', 'GuardianSignature-20220104081130545.jpg', 'GuardianCitizenshipFront-20220104081130796.jpg', 'GuardianCitizenshipBack-20220104081130616.jpg', 'GuardianProof-20220104081130373.jpg');
 
 -- --------------------------------------------------------
 
@@ -8137,7 +8144,8 @@ CREATE TABLE `nomineedetails` (
 --
 
 INSERT INTO `nomineedetails` (`id`, `nominee`, `nomimeeName`, `nomineeFathersName`, `nomineeRelationship`, `referenceDocument`, `nomineeDoc`, `placeOfIssue`, `nomineeIssueYear`, `nomineeAge`, `nominee_zone`, `nominee_district`, `nominee_phoneno`, `nominee_mobileno`, `nominee_email`, `nominee_panno`, `nominee_correspondenceAddress`, `nomineePhoto`, `nomineeSignature`, `nomineeDocumentFront`, `nomineeDocumentBack`) VALUES
-(10000, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Achham', '2021-12-04', 55, 'Bheri', 'Achham', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20211231015032887.jpg', 'NomineeSignature-20211231015032213.jpg', 'NomineeDocumentFront-20211231015032160.jpg', 'NomineeDocumentBack-20211231015032190.jpg');
+(10000, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Arghakhanchi', '2022-01-07', 55, 'Dhaulagiri', 'Achham', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20220104080743714.jpg', 'NomineeSignature-20220104080743747.jpg', 'NomineeDocumentFront-20220104080743479.jpg', 'NomineeDocumentBack-20220104080743770.jpg'),
+(10001, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Achham', '2022-01-08', 55, 'Bagmati', 'Baglung', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20220104081130745.jpg', 'NomineeSignature-20220104081130760.jpg', 'NomineeDocumentFront-20220104081130580.jpg', 'NomineeDocumentBack-20220104081130921.jpg');
 
 -- --------------------------------------------------------
 
@@ -8160,7 +8168,8 @@ CREATE TABLE `occupationdetails` (
 --
 
 INSERT INTO `occupationdetails` (`id`, `occupationType`, `businessType`, `organizationName`, `organizationAddress`, `designation`, `income`) VALUES
-(10000, 2, 1, 'Techtronix', 'Lazimpat', 'Developer', 1);
+(10000, 1, 1, 'Techtronix', 'Lazimpat', 'Developer', 1),
+(10001, 1, 1, 'Techtronix', 'Lazimpat', 'Developer', 1);
 
 -- --------------------------------------------------------
 
@@ -8213,7 +8222,8 @@ CREATE TABLE `otherdocuments` (
 --
 
 INSERT INTO `otherdocuments` (`id`, `applicantPhoto`, `applicantCitizenshipFrontPhoto`, `applicantCitizenshipBackPhoto`, `applicantThumbPhoto`, `applicantLocationMapPhoto`, `applicantSignaturePhoto`) VALUES
-(10000, 'ApplicantPhoto-20211231015032130.jpg', 'ApplicantCitizenshipFrontPhoto-2021123101503397.jpg', 'ApplicantCitizenshipBackPhoto-20211231015033551.jpg', 'ApplicantThumbPhoto-20211231015033266.jpg', 'ApplicantLocationMapPhoto-20211231015033449.jpg', 'ApplicantSignaturePhoto-20211231015033633.jpg');
+(10000, 'ApplicantPhoto-20220104080743338.jpg', 'ApplicantCitizenshipFrontPhoto-20220104080743908.jpg', 'ApplicantCitizenshipBackPhoto-20220104080743455.jpg', 'ApplicantThumbPhoto-2022010408074365.jpg', 'ApplicantLocationMapPhoto-20220104080743178.jpg', 'ApplicantSignaturePhoto-20220104080743871.jpg'),
+(10001, 'ApplicantPhoto-2022010408113013.jpg', 'ApplicantCitizenshipFrontPhoto-20220104081130538.jpg', 'ApplicantCitizenshipBackPhoto-20220104081130445.jpg', 'ApplicantThumbPhoto-20220104081130984.jpg', 'ApplicantLocationMapPhoto-20220104081130726.jpg', 'ApplicantSignaturePhoto-2022010408113017.jpg');
 
 -- --------------------------------------------------------
 
@@ -8240,7 +8250,8 @@ CREATE TABLE `permanentaddress` (
 --
 
 INSERT INTO `permanentaddress` (`id`, `permanent_province`, `permanent_zone`, `permanent_district`, `permanent_vdc`, `permanent_tole`, `permanent_ward`, `permanent_blockno`, `permanent_phoneno`, `permanent_mobileno`, `permanent_email`) VALUES
-(10000, 'Karnali', 'Bheri', 'Arghakhanchi', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
+(10000, 'Bagmati', 'Bheri', 'Achham', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com'),
+(10001, 'Gandaki', 'Dhaulagiri', 'Arghakhanchi', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -8363,17 +8374,16 @@ ALTER TABLE `bankaccounttype`
 --
 ALTER TABLE `bankdetails`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `bankAccountType` (`bankAccountType`),
-  ADD UNIQUE KEY `bank` (`bank`),
-  ADD UNIQUE KEY `branch` (`branch`),
-  ADD KEY `branch_2` (`branch`);
+  ADD KEY `bankAccountType` (`bankAccountType`),
+  ADD KEY `bank` (`bank`),
+  ADD KEY `branch` (`branch`);
 
 --
 -- Indexes for table `beneficialowner`
 --
 ALTER TABLE `beneficialowner`
   ADD PRIMARY KEY (`beneficialowner_id`),
-  ADD UNIQUE KEY `title` (`title`);
+  ADD KEY `title` (`title`);
 
 --
 -- Indexes for table `branch`
@@ -8394,17 +8404,19 @@ ALTER TABLE `businesstype`
 --
 ALTER TABLE `certificatedetails`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `citizenshipIssueDistrict` (`citizenshipIssueDistrict`),
-  ADD UNIQUE KEY `gender` (`gender`);
+  ADD KEY `citizenshipIssueDistrict` (`citizenshipIssueDistrict`),
+  ADD KEY `gender` (`gender`),
+  ADD KEY `gender_2` (`gender`),
+  ADD KEY `citizenshipIssueDistrict_2` (`citizenshipIssueDistrict`);
 
 --
 -- Indexes for table `correspondenceaddress`
 --
 ALTER TABLE `correspondenceaddress`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `correspondence_province` (`correspondence_province`),
-  ADD UNIQUE KEY `correspondence_zone` (`correspondence_zone`),
-  ADD UNIQUE KEY `correspondence_distict` (`correspondence_district`);
+  ADD KEY `correspondence_province` (`correspondence_province`),
+  ADD KEY `correspondence_zone` (`correspondence_zone`),
+  ADD KEY `correspondence_district` (`correspondence_district`);
 
 --
 -- Indexes for table `district`
@@ -8445,11 +8457,11 @@ ALTER TABLE `gender`
 -- Indexes for table `guardiandetails`
 --
 ALTER TABLE `guardiandetails`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `guardian_province` (`guardian_province`),
-  ADD UNIQUE KEY `guardian_zone` (`guardian_zone`),
-  ADD UNIQUE KEY `guardian_district` (`guardian_district`),
-  ADD UNIQUE KEY `guardian_citizenshiptIssueDistrict` (`guardian_citizenshiptIssueDistrict`);
+  ADD KEY `guardian_province` (`guardian_province`),
+  ADD KEY `guardian_zone` (`guardian_zone`),
+  ADD KEY `guardian_district` (`guardian_district`),
+  ADD KEY `guardian_citizenshiptIssueDistrict` (`guardian_citizenshiptIssueDistrict`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `income`
@@ -8461,20 +8473,20 @@ ALTER TABLE `income`
 -- Indexes for table `nomineedetails`
 --
 ALTER TABLE `nomineedetails`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `referenceDocument` (`referenceDocument`),
-  ADD UNIQUE KEY `nominee_zone` (`nominee_zone`),
-  ADD UNIQUE KEY `nominee_district` (`nominee_district`),
-  ADD UNIQUE KEY `placeOfIssue` (`placeOfIssue`);
+  ADD KEY `referenceDocument` (`referenceDocument`),
+  ADD KEY `placeOfIssue` (`placeOfIssue`),
+  ADD KEY `nominee_zone` (`nominee_zone`),
+  ADD KEY `nominee_district` (`nominee_district`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `occupationdetails`
 --
 ALTER TABLE `occupationdetails`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `occupationType` (`occupationType`),
-  ADD UNIQUE KEY `businessType` (`businessType`),
-  ADD UNIQUE KEY `income` (`income`);
+  ADD KEY `occupationType` (`occupationType`),
+  ADD KEY `businessType` (`businessType`),
+  ADD KEY `income` (`income`);
 
 --
 -- Indexes for table `occupationtype`
@@ -8493,9 +8505,9 @@ ALTER TABLE `otherdocuments`
 --
 ALTER TABLE `permanentaddress`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `permanent_province` (`permanent_province`),
-  ADD UNIQUE KEY `permanent_zone` (`permanent_zone`),
-  ADD UNIQUE KEY `permanent_district` (`permanent_district`);
+  ADD KEY `permanent_province` (`permanent_province`),
+  ADD KEY `permanent_zone` (`permanent_zone`),
+  ADD KEY `permanent_district` (`permanent_district`);
 
 --
 -- Indexes for table `province`
@@ -8543,13 +8555,13 @@ ALTER TABLE `bankaccounttype`
 -- AUTO_INCREMENT for table `bankdetails`
 --
 ALTER TABLE `bankdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `beneficialowner`
 --
 ALTER TABLE `beneficialowner`
-  MODIFY `beneficialowner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `beneficialowner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -8567,13 +8579,13 @@ ALTER TABLE `businesstype`
 -- AUTO_INCREMENT for table `certificatedetails`
 --
 ALTER TABLE `certificatedetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `correspondenceaddress`
 --
 ALTER TABLE `correspondenceaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -8585,13 +8597,13 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `firstsection`
 --
 ALTER TABLE `firstsection`
-  MODIFY `firstsection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `firstsection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `form`
 --
 ALTER TABLE `form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `gender`
@@ -8603,7 +8615,7 @@ ALTER TABLE `gender`
 -- AUTO_INCREMENT for table `guardiandetails`
 --
 ALTER TABLE `guardiandetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `income`
@@ -8615,13 +8627,13 @@ ALTER TABLE `income`
 -- AUTO_INCREMENT for table `nomineedetails`
 --
 ALTER TABLE `nomineedetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `occupationdetails`
 --
 ALTER TABLE `occupationdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `occupationtype`
@@ -8633,13 +8645,13 @@ ALTER TABLE `occupationtype`
 -- AUTO_INCREMENT for table `otherdocuments`
 --
 ALTER TABLE `otherdocuments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `permanentaddress`
 --
 ALTER TABLE `permanentaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `province`
@@ -8673,9 +8685,9 @@ ALTER TABLE `zones`
 -- Constraints for table `bankdetails`
 --
 ALTER TABLE `bankdetails`
-  ADD CONSTRAINT `bankdetails_ibfk_2` FOREIGN KEY (`bankAccountType`) REFERENCES `bankaccounttype` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `bankdetails_ibfk_3` FOREIGN KEY (`bank`) REFERENCES `bank` (`bank`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `bankdetails_ibfk_4` FOREIGN KEY (`branch`) REFERENCES `branch` (`branch`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `bankdetails_ibfk_1` FOREIGN KEY (`bankAccountType`) REFERENCES `bankaccounttype` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `bankdetails_ibfk_2` FOREIGN KEY (`bank`) REFERENCES `bank` (`bank`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `bankdetails_ibfk_3` FOREIGN KEY (`branch`) REFERENCES `branch` (`branch`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `beneficialowner`
@@ -8693,8 +8705,8 @@ ALTER TABLE `branch`
 -- Constraints for table `certificatedetails`
 --
 ALTER TABLE `certificatedetails`
-  ADD CONSTRAINT `certificatedetails_ibfk_2` FOREIGN KEY (`gender`) REFERENCES `gender` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `certificatedetails_ibfk_3` FOREIGN KEY (`citizenshipIssueDistrict`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `certificatedetails_ibfk_1` FOREIGN KEY (`gender`) REFERENCES `gender` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `certificatedetails_ibfk_2` FOREIGN KEY (`citizenshipIssueDistrict`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `correspondenceaddress`
@@ -8705,45 +8717,30 @@ ALTER TABLE `correspondenceaddress`
   ADD CONSTRAINT `correspondenceaddress_ibfk_3` FOREIGN KEY (`correspondence_district`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
--- Constraints for table `form`
---
-ALTER TABLE `form`
-  ADD CONSTRAINT `form_ibfk_1` FOREIGN KEY (`firstSection`) REFERENCES `firstsection` (`firstsection_id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_10` FOREIGN KEY (`otherDocuments`) REFERENCES `otherdocuments` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_2` FOREIGN KEY (`beneficialOwner`) REFERENCES `beneficialowner` (`beneficialowner_id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_3` FOREIGN KEY (`correspondenceAddress`) REFERENCES `correspondenceaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_4` FOREIGN KEY (`permanentAddress`) REFERENCES `permanentaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_5` FOREIGN KEY (`certificateDetails`) REFERENCES `certificatedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_6` FOREIGN KEY (`bankDetails`) REFERENCES `bankdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_7` FOREIGN KEY (`occupationDetails`) REFERENCES `occupationdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_8` FOREIGN KEY (`nomineeDetails`) REFERENCES `nomineedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `form_ibfk_9` FOREIGN KEY (`guardianDetails`) REFERENCES `guardiandetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
-
---
 -- Constraints for table `guardiandetails`
 --
 ALTER TABLE `guardiandetails`
   ADD CONSTRAINT `guardiandetails_ibfk_1` FOREIGN KEY (`guardian_province`) REFERENCES `province` (`province`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `guardiandetails_ibfk_2` FOREIGN KEY (`guardian_district`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `guardiandetails_ibfk_3` FOREIGN KEY (`guardian_zone`) REFERENCES `zones` (`zone`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `guardiandetails_ibfk_2` FOREIGN KEY (`guardian_zone`) REFERENCES `zones` (`zone`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `guardiandetails_ibfk_3` FOREIGN KEY (`guardian_district`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `guardiandetails_ibfk_4` FOREIGN KEY (`guardian_citizenshiptIssueDistrict`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `nomineedetails`
 --
 ALTER TABLE `nomineedetails`
-  ADD CONSTRAINT `nomineedetails_ibfk_3` FOREIGN KEY (`referenceDocument`) REFERENCES `referencedocument` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `nomineedetails_ibfk_4` FOREIGN KEY (`nominee_district`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `nomineedetails_ibfk_5` FOREIGN KEY (`placeOfIssue`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `nomineedetails_ibfk_6` FOREIGN KEY (`nominee_zone`) REFERENCES `zones` (`zone`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `nomineedetails_ibfk_1` FOREIGN KEY (`referenceDocument`) REFERENCES `referencedocument` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `nomineedetails_ibfk_2` FOREIGN KEY (`placeOfIssue`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `nomineedetails_ibfk_3` FOREIGN KEY (`nominee_zone`) REFERENCES `zones` (`zone`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `nomineedetails_ibfk_4` FOREIGN KEY (`nominee_district`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `occupationdetails`
 --
 ALTER TABLE `occupationdetails`
-  ADD CONSTRAINT `occupationdetails_ibfk_1` FOREIGN KEY (`businessType`) REFERENCES `businesstype` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  ADD CONSTRAINT `occupationdetails_ibfk_2` FOREIGN KEY (`occupationType`) REFERENCES `occupationtype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `occupationdetails_ibfk_3` FOREIGN KEY (`income`) REFERENCES `income` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `occupationdetails_ibfk_1` FOREIGN KEY (`occupationType`) REFERENCES `occupationtype` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `occupationdetails_ibfk_2` FOREIGN KEY (`businessType`) REFERENCES `businesstype` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `occupationdetails_ibfk_3` FOREIGN KEY (`income`) REFERENCES `income` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `permanentaddress`
