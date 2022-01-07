@@ -40,7 +40,8 @@ $zone = new Zone();
             <div class="row mb-4">
                 <div class="col-lg-6">
                     <p class="font-22"><b>Type of Account / खाताको प्रकार <span class="red">*</span></b></p>
-                    <input type="radio" id="Individual" name="accountType" value="Individual" class="radiobuttons" checked="checked"
+                    <input type="radio" id="Individual" name="accountType" value="Individual" class="radiobuttons"
+                        checked="checked"
                         <?php if (isset($accountType) && $accountType=="Individual") $_POST['accountType'];?> />
                     <label for="html" class="font-20">Individual / व्यक्तिगत</label><br>
                     <input type="radio" id="NonResidentNepalese" name="accountType" value="NonResidentNepalese"
@@ -70,7 +71,8 @@ $zone = new Zone();
                     <input type="radio" id="Married" name="maritalStatus" value="Married" class="radiobuttons"
                         <?php if (isset($maritalStatus) && $maritalStatus=="Married") $_POST['maritalStatus'];?> />
                     <label for="html" class="font-20">Married / विवाहित</label><br>
-                    <input type="radio" id="Unmarried" name="maritalStatus" value="Unmarried" class="radiobuttons" checked="checked"
+                    <input type="radio" id="Unmarried" name="maritalStatus" value="Unmarried" class="radiobuttons"
+                        checked="checked"
                         <?php if (isset($maritalStatus) && $maritalStatus=="Unmarried") $_POST['maritalStatus'];?> />
                     <label for="html" class="font-20">Unmarried / अविवाहित</label>
                 </div>
@@ -104,7 +106,7 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>First Name / आवेदकको पहिलो नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="firstName" id="firstName" >
+                        <input type="text" class="inputTextField validations" name="firstName" id="firstName">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Middle Name / आवेदकको बीचको नाम</b></p>
@@ -112,19 +114,21 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Last Name / आवेदकको थर <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="lastName" id="lastName" >
+                        <input type="text" class="inputTextField validations" name="lastName" id="lastName">
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Father's Name / बुवाको नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="fathersName" id="fathersName" >
+                        <input type="text" class="inputTextField validations" name="fathersName" id="fathersName">
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Grandfather's Name / हजुरबुबाको नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="grandFathersName" id="grandFathersName" >
+                        <input type="text" class="inputTextField validations" name="grandFathersName"
+                            id="grandFathersName">
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Mother's Name / आमाको नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations font-20" name="mothersName" id="mothersName" >
+                        <input type="text" class="inputTextField validations font-20" name="mothersName"
+                            id="mothersName">
                     </div>
                 </div>
             </div>
@@ -159,7 +163,7 @@ $zone = new Zone();
                             ?>
                             </div>
                             <input type="text" class="province-selected validations" name="correspondence_province"
-                                placeholder="Select Province" id="correspondence_province" >
+                                placeholder="Select Province" id="correspondence_province" readonly>
                             <div class="province-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -187,7 +191,7 @@ $zone = new Zone();
                             ?>
                             </div>
                             <input type="text" class="zone-selected validations" name="correspondence_zone"
-                                placeholder="Select Zone" id="correspondence_zone">
+                                placeholder="Select Zone" id="correspondence_zone" readonly>
                             <div class="zone-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -216,7 +220,7 @@ $zone = new Zone();
                             ?>
                             </div>
                             <input type="text" class="district-selected validations" name="correspondence_district"
-                                placeholder="Select District" id="correspondence_district">
+                                placeholder="Select District" id="correspondence_district" readonly>
                             <div class="district-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -224,15 +228,18 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>VDC-Municipality / गाविस -नगरपालिका <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="correspondence_vdc" id="correspondence_vdc">
+                        <input type="text" class="inputTextField validations" name="correspondence_vdc"
+                            id="correspondence_vdc">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Tole / टोल <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="correspondence_tole" id="correspondence_tole">
+                        <input type="text" class="inputTextField validations" name="correspondence_tole"
+                            id="correspondence_tole">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Ward No / वार्ड नं. <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="correspondence_ward" id="correspondence_ward">
+                        <input type="text" class="inputTextField validations" name="correspondence_ward"
+                            id="correspondence_ward">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Block No / ब्लक नं</b></p>
@@ -251,7 +258,8 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Email / ईमेल <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="correspondence_email" id="correspondence_email">
+                        <input type="text" class="inputTextField validations" name="correspondence_email"
+                            id="correspondence_email">
                     </div>
                 </div>
             </div>
@@ -293,7 +301,7 @@ $zone = new Zone();
                             ?>
                             </div>
                             <input type="text" class="permanentProvince-selected validations" name="permanent_province"
-                                placeholder="Select Province" id="permanent_province">
+                                placeholder="Select Province" id="permanent_province" readonly>
                             <div class="permanentProvince-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -322,7 +330,7 @@ $zone = new Zone();
                             ?>
                             </div>
                             <input type="text" class="permanentZone-selected validations" name="permanent_zone"
-                                placeholder="Select Permanent Zone" id="permanent_zone">
+                                placeholder="Select Permanent Zone" id="permanent_zone" readonly>
                             <div class="permanentZone-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -351,7 +359,7 @@ $zone = new Zone();
                             ?>
                             </div>
                             <input type="text" class="permanentDistrict-selected validations" name="permanent_district"
-                                placeholder="Select District" id="permanent_district">
+                                placeholder="Select District" id="permanent_district" readonly>
                             <div class="permanentDistrict-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -379,11 +387,13 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Mobile No / मोबाइल नम्बर (10 digits) <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField validations" name="permanent_mobileno" id="permanent_mobileno">
+                        <input type="text" class="inputTextField validations" name="permanent_mobileno"
+                            id="permanent_mobileno">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Email / ईमेल <span class="red">*</span></b></p>
-                        <input type="email" class="inputTextField validations" name="permanent_email" id="permanent_email">
+                        <input type="email" class="inputTextField validations" name="permanent_email"
+                            id="permanent_email">
                     </div>
                 </div>
             </div>
@@ -421,8 +431,9 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="citizenshipIssueDistrict-selected validations" name="citizenshipIssueDistrict"
-                                placeholder="Select District" id="citizenshipIssueDistrict">
+                            <input type="text" class="citizenshipIssueDistrict-selected validations"
+                                name="citizenshipIssueDistrict" placeholder="Select District"
+                                id="citizenshipIssueDistrict" readonly>
                             <div class="citizenshipIssueDistrict-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -534,7 +545,8 @@ $zone = new Zone();
                             }
                             ?>
                         </div>
-                        <input type="text" class="selected validations" name="bank" placeholder="Select Bank" id="banks" >
+                        <input type="text" class="selected validations" name="bank" placeholder="Select Bank" id="banks"
+                            readonly>
                         <div class="search-box">
                             <input type="text" placeholder="search...">
                         </div>
@@ -657,7 +669,8 @@ $zone = new Zone();
                         <div class="col-lg-6">
                             <p class="font-22"><b>Father's Name <br> बुवाको नाम <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField " name="nomineeFathersName" id="nomineeFathersName">
+                            <input type="text" class="inputTextField " name="nomineeFathersName"
+                                id="nomineeFathersName">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Relationship <br> सम्बन्ध <span class="red">*</span></b></p>
@@ -720,7 +733,7 @@ $zone = new Zone();
                             ?>
                                 </div>
                                 <input type="text" class="placeOfIssue-selected " name="placeOfIssue"
-                                    placeholder="Select issued District" id="placeOfIssue">
+                                    placeholder="Select issued District" id="placeOfIssue" readonly>
                                 <div class="placeOfIssue-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>
@@ -757,7 +770,7 @@ $zone = new Zone();
                             ?>
                                 </div>
                                 <input type="text" class="nomineeZone-selected " name="nominee_zone"
-                                    placeholder="Select Zone" id="nominee_zone">
+                                    placeholder="Select Zone" id="nominee_zone" readonly>
                                 <div class="nomineeZone-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>
@@ -787,7 +800,7 @@ $zone = new Zone();
                             ?>
                                 </div>
                                 <input type="text" class="nomineeDistrict-selected " name="nominee_district"
-                                    placeholder="Select District" id="nominee_district">
+                                    placeholder="Select District" id="nominee_district" readonly>
                                 <div class="nomineeDistrict-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>
@@ -853,15 +866,18 @@ $zone = new Zone();
                     <input type="file" class="inputTextField validations" name="applicantPhoto" id="applicantPhoto">
                 </div>
                 <div class="col-lg-6">
-                    <p class="font-22"><b>Citizenship of Applicant (Front) <br> जन्मदर्ता प्रमाण (अगाडि)
+                    <p class="font-22 show_notminor"><b>Citizenship of Applicant (Front) <br> जन्मदर्ता प्रमाण (अगाडि)
                             <span class="red">*</span>
-                        </b></p> 
+                        </b></p>
+                    <p class="font-22 show_minor"><b>Birth Certificate of Applicant <br> जन्मदर्ता प्रमाण
+                            <span class="red">*</span>
+                        </b></p>
                     <input type="file" class="inputTextField validations" name="applicantCitizenshipFrontPhoto"
                         id="applicantCitizenshipFrontPhoto">
                 </div>
-                <div class="col-lg-6">
-                    <p class="font-22"><b>Citizenship of Applicant (Front)<br>जन्मदर्ता प्रमाण (अगाडि) <span
-                                class="red">*</span>
+                <div class="col-lg-6 show_notminor">
+                    <p class="font-22"><b>Citizenship of Applicant (Back)<br>जन्मदर्ता प्रमाण (पछाडि)
+                            <span class="red">*</span>
                         </b></p>
                     <input type="file" class="inputTextField validations" name="applicantCitizenshipBackPhoto"
                         id="applicantCitizenshipBackPhoto">
@@ -869,7 +885,8 @@ $zone = new Zone();
                 <div class="col-lg-6">
                     <p class="font-22"><b>Applicant Thumb Print <br>आवेदकको औंठा छाप<span class="red">*</span></b>
                     </p>
-                    <input type="file" class="inputTextField validations"  name="applicantThumbPhoto" id="applicantThumbPhoto">
+                    <input type="file" class="inputTextField validations" name="applicantThumbPhoto"
+                        id="applicantThumbPhoto">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Location Map of Applicant Residence<br>
@@ -914,7 +931,8 @@ $zone = new Zone();
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Father Name <br> बुबाको नाम<span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField " name="guardianFatherName" id="guardianFatherName">
+                            <input type="text" class="inputTextField " name="guardianFatherName"
+                                id="guardianFatherName">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Grandfather Name <br> हजुरबुबाको नाम<span class="red">*</span></b></p>
@@ -959,7 +977,7 @@ $zone = new Zone();
                             ?>
                                 </div>
                                 <input type="text" class="guardianProvince-selected " name="guardian_province"
-                                    placeholder="Select Province" id="guardian_province">
+                                    placeholder="Select Province" id="guardian_province" readonly>
                                 <div class="guardianProvince-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>
@@ -988,7 +1006,7 @@ $zone = new Zone();
                             ?>
                                 </div>
                                 <input type="text" class="guardianZone-selected " name="guardian_zone"
-                                    placeholder="Select Zone" id="guardian_zone">
+                                    placeholder="Select Zone" id="guardian_zone" readonly>
                                 <div class="guardianZone-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>
@@ -1017,7 +1035,7 @@ $zone = new Zone();
                             ?>
                                 </div>
                                 <input type="text" class="guardianDistrict-selected " name="guardian_district"
-                                    placeholder="Select District" id="guardian_district">
+                                    placeholder="Select District" id="guardian_district" readonly>
                                 <div class="guardianDistrict-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>
@@ -1029,7 +1047,7 @@ $zone = new Zone();
                             <input type="text" class="inputTextField " name="guardian_vdc" id="guardian_vdc">
                         </div>
                         <div class="col-lg-6 mt-3">
-                            <p class="font-22"><b>Block No <br> ब्लक नं <span class="red">*</span></b></p>
+                            <p class="font-22"><b>Block No <br> ब्लक नं</b></p>
                             <input type="text" class="inputTextField " name="guardian_blockNo" id="guardian_blockNo">
                         </div>
                         <div class="col-lg-6 mt-3">
@@ -1037,7 +1055,7 @@ $zone = new Zone();
                             <input type="text" class="inputTextField " name="guardian_ward" id="guardian_ward">
                         </div>
                         <div class="col-lg-6 mt-3">
-                            <p class="font-22"><b>Phone No <br> फोन नम्बर <span class="red">*</span></b>
+                            <p class="font-22"><b>Phone No <br> फोन नम्बर</b>
                             </p>
                             <input type="text" class="inputTextField " name="guardian_phoneno" id="guardian_phoneno">
                         </div>
@@ -1079,7 +1097,7 @@ $zone = new Zone();
                                 </div>
                                 <input type="text" class="guardianIssuedDistrict-selected "
                                     name="guardian_citizenshiptIssueDistrict" placeholder="Select District"
-                                    id="guardian_citizenshiptIssueDistrict">
+                                    id="guardian_citizenshiptIssueDistrict" readonly>
                                 <div class="guardianIssuedDistrict-search-box">
                                     <input type="text" placeholder="search...">
                                 </div>

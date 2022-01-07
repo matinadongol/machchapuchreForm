@@ -45,7 +45,6 @@ function validateForm() {
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByClassName("validations");
   // A loop that checks every input field in the current tab:
-  console.log(y);
 
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
