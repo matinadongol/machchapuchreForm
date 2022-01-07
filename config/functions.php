@@ -12,11 +12,7 @@
 // }
 
 // if(!funtion_exists('redirect')){
-    function redirect($path, $session_status = null, $session_status_msg = null){
-        if($session_status != NULL){
-            $_SESSION[$session_status] = $session_status_msg;
-        }
-
+    function redirect($path){
         @header('location: '.$path);
         exit;
     }

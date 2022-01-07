@@ -28,8 +28,8 @@
     border: 1px solid #aaaaaa;
   }
   
-  input.invalid {
-    background-color: #cecbcb;
+  .invalid {
+    background-color: rgb(232, 240, 254);
   }
   
   .tab {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2022 at 08:12 AM
+-- Generation Time: Jan 07, 2022 at 10:24 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -234,8 +234,9 @@ CREATE TABLE `bankdetails` (
 --
 
 INSERT INTO `bankdetails` (`id`, `bankAccountType`, `bank`, `branch`, `bankAccountno`, `status`) VALUES
-(10000, 1, 'Ace Development Bank Ltd', 'Ace Development Bank Ltd.- Pyuthan Branch', '45645678686', 1),
-(10001, 1, 'Ace Development Bank Ltd', 'Ace Development Bank Ltd.- Pyuthan Branch', '45645678686', 1);
+(10000, 1, 'Apex Development Bank Ltd', 'Apex Development Bank Ltd.- Jahare Branch', '45645678686', 1),
+(10001, 1, 'Agriculture Development Bank Ltd', 'Agriculture Development Bank Ltd.-Banepa Branch', '45645678686', 1),
+(10002, 1, 'Nabli Bank Limited', 'Nabil Bank Ltd.- Personal Lending Branch', '45645678686', 1);
 
 -- --------------------------------------------------------
 
@@ -259,8 +260,9 @@ CREATE TABLE `beneficialowner` (
 --
 
 INSERT INTO `beneficialowner` (`beneficialowner_id`, `title`, `firstName`, `middleName`, `lastName`, `fathersName`, `grandFathersName`, `mothersName`) VALUES
-(10000, 3, 'Matina', 'Devi', 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol'),
-(10001, 1, 'Rakshak', 'Lal', 'Maharjan', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol');
+(10000, 1, 'Rakshak', NULL, 'Maharjan', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol'),
+(10001, 3, 'Matina', NULL, 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol'),
+(10002, 1, 'Rayan', 'Lal', 'Dongol', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Nara Devi Dongol');
 
 -- --------------------------------------------------------
 
@@ -7845,8 +7847,9 @@ CREATE TABLE `certificatedetails` (
 --
 
 INSERT INTO `certificatedetails` (`id`, `citizenshipNo`, `citizenshipIssueDistrict`, `CitizenshipIssueDateBS`, `CitizenshipIssueDateAD`, `DOBBS`, `DOBAD`, `gender`, `panno`) VALUES
-(10000, '32165456/6546548', 'Achham', '2054-11-12', '2022-01-07', '2054-11-12', '2021-12-30', 1, '65465465456'),
-(10001, '32165456/6546548', 'Achham', '2054-11-12', '2022-01-07', '2054-11-12', '2022-01-06', 1, '65465465456');
+(10000, '32165456/6546548', 'Arghakhanchi', '2054-11-12', '2022-01-05', '2054-11-12', '2022-01-05', 1, NULL),
+(10001, '32165456/6546548', 'Baitadi', '2054-11-12', '2022-01-20', '2054-11-12', '2022-01-13', 2, '65465465456'),
+(10002, '32165456/6546548', 'Arghakhanchi', '2054-11-12', '2022-01-21', '2054-11-12', '2022-01-06', 2, '65465465456');
 
 -- --------------------------------------------------------
 
@@ -7873,8 +7876,9 @@ CREATE TABLE `correspondenceaddress` (
 --
 
 INSERT INTO `correspondenceaddress` (`id`, `correspondence_province`, `correspondence_zone`, `correspondence_district`, `correspondence_vdc`, `correspondence_tole`, `correspondence_ward`, `correspondence_blockno`, `correspondence_phoneno`, `correspondence_mobileno`, `correspondence_email`) VALUES
-(10000, 'Bagmati', 'Bheri', 'Achham', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com'),
-(10001, 'Gandaki', 'Dhaulagiri', 'Arghakhanchi', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
+(10000, 'Karnali', 'Bheri', 'Arghakhanchi', 'ktm', 'lampati', 14, NULL, NULL, 2147483647, 'dongolmt@gmail.com'),
+(10001, 'Karnali', 'Gandaki', 'Baglung', 'ktm', 'lampati', 14, NULL, NULL, 2147483647, 'dongolmt@gmail.com'),
+(10002, 'Gandaki', 'Janakpur', 'Baglung', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -7988,8 +7992,9 @@ CREATE TABLE `firstsection` (
 --
 
 INSERT INTO `firstsection` (`firstsection_id`, `accountType`, `minor`, `meroShareService`, `maritalStatus`) VALUES
-(10000, 'Individual', 'minor', 'Yes', 'Married'),
-(10001, 'NonResidentNepalese', 'minor', 'Yes', 'Married');
+(10000, 'Individual', 'notMinor', 'Yes', 'Unmarried'),
+(10001, 'Individual', 'notMinor', 'Yes', 'Unmarried'),
+(10002, 'Individual', 'minor', 'Yes', 'Unmarried');
 
 -- --------------------------------------------------------
 
@@ -8017,7 +8022,8 @@ CREATE TABLE `form` (
 
 INSERT INTO `form` (`id`, `firstSection`, `beneficialOwner`, `correspondenceAddress`, `permanentAddress`, `certificateDetails`, `bankDetails`, `occupationDetails`, `nomineeDetails`, `guardianDetails`, `otherDocuments`) VALUES
 (10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000),
-(10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001);
+(10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001, 10001),
+(10002, 10002, 10002, 10002, 10002, 10002, 10002, 10002, 10002, 10002, 10002);
 
 -- --------------------------------------------------------
 
@@ -8084,8 +8090,9 @@ CREATE TABLE `guardiandetails` (
 --
 
 INSERT INTO `guardiandetails` (`id`, `guardianFirstName`, `guardianMiddleName`, `guardianLastName`, `guardianRelation`, `guardianFatherName`, `guardianGrandFatherName`, `guardianSpouseName`, `guardianCitizenshipNo`, `guardianAddress`, `guardian_province`, `guardian_zone`, `guardian_district`, `guardian_vdc`, `guardian_blockNo`, `guardian_ward`, `guardian_phoneno`, `guardian_mobileno`, `guardian_panno`, `guardian_email`, `guardian_citizenshiptIssueDistrict`, `guardian_citizenshipIssueDateBS`, `guardian_citizenshipIssueDateAD`, `guardian_DOBBS`, `guardian_DOBAD`, `guardianPhoto`, `guardianSignature`, `guardianCitizenshipFront`, `guardianCitizenshipBack`, `guardianProof`) VALUES
-(10000, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 'Bagmati', 'Bagmati', 'Arghakhanchi', 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 'Achham', '2054-11-12', '2022-01-07', '2054-11-12', '2021-12-30', 'GuardianPhoto-20220104080743117.jpg', 'GuardianSignature-20220104080743438.jpg', 'GuardianCitizenshipFront-20220104080743917.jpg', 'GuardianCitizenshipBack-20220104080743385.jpg', 'GuardianProof-20220104080743150.jpg'),
-(10001, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 'Bagmati', 'Bheri', 'Baglung', 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 'Achham', '2054-11-12', '2022-01-14', '2054-11-12', '2022-01-14', 'GuardianPhoto-20220104081130364.jpg', 'GuardianSignature-20220104081130545.jpg', 'GuardianCitizenshipFront-20220104081130796.jpg', 'GuardianCitizenshipBack-20220104081130616.jpg', 'GuardianProof-20220104081130373.jpg');
+(10000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10001, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10002, 'Ram', 'Krishna', 'Dongol', 'Father', 'Moti Lal Dongol', 'Mohan Lal Dongol', 'Nara Devi Dongol', '2354234', 'Kalanki', 'Province 2', 'Bagmati', 'Arghakhanchi', 'ktm', 244, 14, 1234567890, 1234567890, 234234, 'dongolrk@gmail.com', 'Baglung', '2054-11-12', '2022-01-14', '2054-11-12', '2022-01-05', 'GuardianPhoto-20220107102405445.jpg', 'GuardianSignature-20220107102405333.jpg', 'GuardianCitizenshipFront-20220107102405286.jpg', 'GuardianCitizenshipBack-20220107102405692.jpg', 'GuardianProof-20220107102405357.jpg');
 
 -- --------------------------------------------------------
 
@@ -8144,8 +8151,9 @@ CREATE TABLE `nomineedetails` (
 --
 
 INSERT INTO `nomineedetails` (`id`, `nominee`, `nomimeeName`, `nomineeFathersName`, `nomineeRelationship`, `referenceDocument`, `nomineeDoc`, `placeOfIssue`, `nomineeIssueYear`, `nomineeAge`, `nominee_zone`, `nominee_district`, `nominee_phoneno`, `nominee_mobileno`, `nominee_email`, `nominee_panno`, `nominee_correspondenceAddress`, `nomineePhoto`, `nomineeSignature`, `nomineeDocumentFront`, `nomineeDocumentBack`) VALUES
-(10000, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Arghakhanchi', '2022-01-07', 55, 'Dhaulagiri', 'Achham', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20220104080743714.jpg', 'NomineeSignature-20220104080743747.jpg', 'NomineeDocumentFront-20220104080743479.jpg', 'NomineeDocumentBack-20220104080743770.jpg'),
-(10001, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Achham', '2022-01-08', 55, 'Bagmati', 'Baglung', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20220104081130745.jpg', 'NomineeSignature-20220104081130760.jpg', 'NomineeDocumentFront-20220104081130580.jpg', 'NomineeDocumentBack-20220104081130921.jpg');
+(10000, 'not_nominee', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10001, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Baglung', '2022-01-08', 55, 'Bheri', 'Bajura', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-2022010710204144.jpg', 'NomineeSignature-20220107102041312.jpg', 'NomineeDocumentFront-202201071020412.jpg', 'NomineeDocumentBack-20220107102041121.jpg'),
+(10002, 'is_nominee', 'Ram Krishna Dongol', 'Moti Lal Dongol', 'Father', 1, '47678678', 'Baglung', '2021-12-31', 55, 'Bheri', 'Baitadi', 2147483647, 2147483647, 'dongolmt@gmail.com', 24334234, 'Kalanki', 'NomineePhoto-20220107102405391.jpg', 'NomineeSignature-20220107102405233.jpg', 'NomineeDocumentFront-20220107102405583.jpg', 'NomineeDocumentBack-20220107102405978.jpg');
 
 -- --------------------------------------------------------
 
@@ -8168,8 +8176,9 @@ CREATE TABLE `occupationdetails` (
 --
 
 INSERT INTO `occupationdetails` (`id`, `occupationType`, `businessType`, `organizationName`, `organizationAddress`, `designation`, `income`) VALUES
-(10000, 1, 1, 'Techtronix', 'Lazimpat', 'Developer', 1),
-(10001, 1, 1, 'Techtronix', 'Lazimpat', 'Developer', 1);
+(10000, 4, NULL, NULL, NULL, NULL, NULL),
+(10001, 1, 1, 'Techtronix', 'Lazimpat', 'Developer', 1),
+(10002, 3, 2, 'Techtronix', 'Lazimpat', 'Developer', 2);
 
 -- --------------------------------------------------------
 
@@ -8222,8 +8231,9 @@ CREATE TABLE `otherdocuments` (
 --
 
 INSERT INTO `otherdocuments` (`id`, `applicantPhoto`, `applicantCitizenshipFrontPhoto`, `applicantCitizenshipBackPhoto`, `applicantThumbPhoto`, `applicantLocationMapPhoto`, `applicantSignaturePhoto`) VALUES
-(10000, 'ApplicantPhoto-20220104080743338.jpg', 'ApplicantCitizenshipFrontPhoto-20220104080743908.jpg', 'ApplicantCitizenshipBackPhoto-20220104080743455.jpg', 'ApplicantThumbPhoto-2022010408074365.jpg', 'ApplicantLocationMapPhoto-20220104080743178.jpg', 'ApplicantSignaturePhoto-20220104080743871.jpg'),
-(10001, 'ApplicantPhoto-2022010408113013.jpg', 'ApplicantCitizenshipFrontPhoto-20220104081130538.jpg', 'ApplicantCitizenshipBackPhoto-20220104081130445.jpg', 'ApplicantThumbPhoto-20220104081130984.jpg', 'ApplicantLocationMapPhoto-20220104081130726.jpg', 'ApplicantSignaturePhoto-2022010408113017.jpg');
+(10000, 'ApplicantPhoto-20220107101759414.jpg', 'ApplicantCitizenshipFrontPhoto-20220107101759985.jpg', 'ApplicantCitizenshipBackPhoto-20220107101759558.jpg', 'ApplicantThumbPhoto-20220107101759900.jpg', 'ApplicantLocationMapPhoto-20220107101759843.jpg', 'ApplicantSignaturePhoto-20220107101759147.jpg'),
+(10001, 'ApplicantPhoto-20220107102041779.jpg', 'ApplicantCitizenshipFrontPhoto-20220107102041301.jpg', 'ApplicantCitizenshipBackPhoto-20220107102041601.jpg', 'ApplicantThumbPhoto-20220107102041372.jpg', 'ApplicantLocationMapPhoto-20220107102041367.jpg', 'ApplicantSignaturePhoto-20220107102041441.jpg'),
+(10002, 'ApplicantPhoto-20220107102405579.jpg', 'ApplicantCitizenshipFrontPhoto-2022010710240579.jpg', 'ApplicantCitizenshipBackPhoto-20220107102405303.jpg', 'ApplicantThumbPhoto-20220107102405504.jpg', 'ApplicantLocationMapPhoto-20220107102405620.jpg', 'ApplicantSignaturePhoto-20220107102405933.jpg');
 
 -- --------------------------------------------------------
 
@@ -8250,8 +8260,9 @@ CREATE TABLE `permanentaddress` (
 --
 
 INSERT INTO `permanentaddress` (`id`, `permanent_province`, `permanent_zone`, `permanent_district`, `permanent_vdc`, `permanent_tole`, `permanent_ward`, `permanent_blockno`, `permanent_phoneno`, `permanent_mobileno`, `permanent_email`) VALUES
-(10000, 'Bagmati', 'Bheri', 'Achham', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com'),
-(10001, 'Gandaki', 'Dhaulagiri', 'Arghakhanchi', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
+(10000, 'Karnali', 'Bheri', 'Arghakhanchi', 'ktm', 'lampati', 14, NULL, NULL, 2147483647, 'dongolmt@gmail.com'),
+(10001, 'Karnali', 'Gandaki', 'Baglung', 'ktm', 'lampati', 14, NULL, NULL, 2147483647, 'dongolmt@gmail.com'),
+(10002, 'Gandaki', 'Janakpur', 'Baglung', 'ktm', 'lampati', 14, 244, 2147483647, 2147483647, 'dongolmt@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -8555,13 +8566,13 @@ ALTER TABLE `bankaccounttype`
 -- AUTO_INCREMENT for table `bankdetails`
 --
 ALTER TABLE `bankdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `beneficialowner`
 --
 ALTER TABLE `beneficialowner`
-  MODIFY `beneficialowner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `beneficialowner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -8579,13 +8590,13 @@ ALTER TABLE `businesstype`
 -- AUTO_INCREMENT for table `certificatedetails`
 --
 ALTER TABLE `certificatedetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `correspondenceaddress`
 --
 ALTER TABLE `correspondenceaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -8597,13 +8608,13 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `firstsection`
 --
 ALTER TABLE `firstsection`
-  MODIFY `firstsection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `firstsection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `form`
 --
 ALTER TABLE `form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `gender`
@@ -8615,7 +8626,7 @@ ALTER TABLE `gender`
 -- AUTO_INCREMENT for table `guardiandetails`
 --
 ALTER TABLE `guardiandetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `income`
@@ -8627,13 +8638,13 @@ ALTER TABLE `income`
 -- AUTO_INCREMENT for table `nomineedetails`
 --
 ALTER TABLE `nomineedetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `occupationdetails`
 --
 ALTER TABLE `occupationdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `occupationtype`
@@ -8645,13 +8656,13 @@ ALTER TABLE `occupationtype`
 -- AUTO_INCREMENT for table `otherdocuments`
 --
 ALTER TABLE `otherdocuments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `permanentaddress`
 --
 ALTER TABLE `permanentaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `province`
@@ -8715,6 +8726,21 @@ ALTER TABLE `correspondenceaddress`
   ADD CONSTRAINT `correspondenceaddress_ibfk_1` FOREIGN KEY (`correspondence_province`) REFERENCES `province` (`province`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `correspondenceaddress_ibfk_2` FOREIGN KEY (`correspondence_zone`) REFERENCES `zones` (`zone`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `correspondenceaddress_ibfk_3` FOREIGN KEY (`correspondence_district`) REFERENCES `district` (`district`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `form`
+--
+ALTER TABLE `form`
+  ADD CONSTRAINT `form_ibfk_1` FOREIGN KEY (`firstSection`) REFERENCES `firstsection` (`firstsection_id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_10` FOREIGN KEY (`otherDocuments`) REFERENCES `otherdocuments` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_2` FOREIGN KEY (`beneficialOwner`) REFERENCES `beneficialowner` (`beneficialowner_id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_3` FOREIGN KEY (`correspondenceAddress`) REFERENCES `correspondenceaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_4` FOREIGN KEY (`permanentAddress`) REFERENCES `permanentaddress` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_5` FOREIGN KEY (`certificateDetails`) REFERENCES `certificatedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_6` FOREIGN KEY (`bankDetails`) REFERENCES `bankdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_7` FOREIGN KEY (`occupationDetails`) REFERENCES `occupationdetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_8` FOREIGN KEY (`nomineeDetails`) REFERENCES `nomineedetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `form_ibfk_9` FOREIGN KEY (`guardianDetails`) REFERENCES `guardiandetails` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `guardiandetails`

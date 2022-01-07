@@ -40,7 +40,7 @@ $zone = new Zone();
             <div class="row mb-4">
                 <div class="col-lg-6">
                     <p class="font-22"><b>Type of Account / खाताको प्रकार <span class="red">*</span></b></p>
-                    <input type="radio" id="Individual" name="accountType" value="Individual" class="radiobuttons"
+                    <input type="radio" id="Individual" name="accountType" value="Individual" class="radiobuttons" checked="checked"
                         <?php if (isset($accountType) && $accountType=="Individual") $_POST['accountType'];?> />
                     <label for="html" class="font-20">Individual / व्यक्तिगत</label><br>
                     <input type="radio" id="NonResidentNepalese" name="accountType" value="NonResidentNepalese"
@@ -60,7 +60,7 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Mero Share Service / मेरोशेयर सेवा <span class="red">*</span></b></p>
-                    <input type="radio" id="hasMeroShareService" name="meroShareService" value="Yes"
+                    <input type="radio" id="hasMeroShareService" name="meroShareService" value="Yes" checked="checked"
                         class="radiobuttons"
                         <?php if (isset($meroShareService) && $meroShareService=="Yes") $_POST['meroShareService'];?> />
                     <label for="html" class="font-20">Yes / हो</label><br>
@@ -70,7 +70,7 @@ $zone = new Zone();
                     <input type="radio" id="Married" name="maritalStatus" value="Married" class="radiobuttons"
                         <?php if (isset($maritalStatus) && $maritalStatus=="Married") $_POST['maritalStatus'];?> />
                     <label for="html" class="font-20">Married / विवाहित</label><br>
-                    <input type="radio" id="Unmarried" name="maritalStatus" value="Unmarried" class="radiobuttons"
+                    <input type="radio" id="Unmarried" name="maritalStatus" value="Unmarried" class="radiobuttons" checked="checked"
                         <?php if (isset($maritalStatus) && $maritalStatus=="Unmarried") $_POST['maritalStatus'];?> />
                     <label for="html" class="font-20">Unmarried / अविवाहित</label>
                 </div>
@@ -84,7 +84,7 @@ $zone = new Zone();
                 <div class="row mb-4">
                     <div class="col-lg-6">
                         <p class="font-22"><b>Title / शिर्षक <span class="red">*</span></b></p>
-                        <select name="title" id="title">
+                        <select name="title" id="title" class="validations">
                             <?php
                             $all_title = $title->getAllTitle();
                             //debugger($all_title);
@@ -104,7 +104,7 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>First Name / आवेदकको पहिलो नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="firstName" id="firstName">
+                        <input type="text" class="inputTextField validations" name="firstName" id="firstName" >
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Middle Name / आवेदकको बीचको नाम</b></p>
@@ -112,19 +112,19 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Last Name / आवेदकको थर <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="lastName" id="lastName">
+                        <input type="text" class="inputTextField validations" name="lastName" id="lastName" >
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Father's Name / बुवाको नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="fathersName" id="fathersName">
+                        <input type="text" class="inputTextField validations" name="fathersName" id="fathersName" >
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Grandfather's Name / हजुरबुबाको नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="grandFathersName" id="grandFathersName">
+                        <input type="text" class="inputTextField validations" name="grandFathersName" id="grandFathersName" >
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Mother's Name / आमाको नाम <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField font-20" name="mothersName" id="mothersName">
+                        <input type="text" class="inputTextField validations font-20" name="mothersName" id="mothersName" >
                     </div>
                 </div>
             </div>
@@ -158,8 +158,8 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="province-selected" name="correspondence_province"
-                                placeholder="Select Province" id="correspondence_province">
+                            <input type="text" class="province-selected validations" name="correspondence_province"
+                                placeholder="Select Province" id="correspondence_province" >
                             <div class="province-search-box">
                                 <input type="text" placeholder="search...">
                             </div>
@@ -186,7 +186,7 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="zone-selected" name="correspondence_zone"
+                            <input type="text" class="zone-selected validations" name="correspondence_zone"
                                 placeholder="Select Zone" id="correspondence_zone">
                             <div class="zone-search-box">
                                 <input type="text" placeholder="search...">
@@ -215,7 +215,7 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="district-selected" name="correspondence_district"
+                            <input type="text" class="district-selected validations" name="correspondence_district"
                                 placeholder="Select District" id="correspondence_district">
                             <div class="district-search-box">
                                 <input type="text" placeholder="search...">
@@ -224,15 +224,15 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>VDC-Municipality / गाविस -नगरपालिका <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="correspondence_vdc" id="correspondence_vdc">
+                        <input type="text" class="inputTextField validations" name="correspondence_vdc" id="correspondence_vdc">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Tole / टोल <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="correspondence_tole" id="correspondence_tole">
+                        <input type="text" class="inputTextField validations" name="correspondence_tole" id="correspondence_tole">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Ward No / वार्ड नं. <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="correspondence_ward" id="correspondence_ward">
+                        <input type="text" class="inputTextField validations" name="correspondence_ward" id="correspondence_ward">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Block No / ब्लक नं</b></p>
@@ -246,12 +246,12 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Mobile No / मोबाइल नम्बर (10 digits) <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="correspondence_mobileno"
+                        <input type="text" class="inputTextField validations" name="correspondence_mobileno"
                             id="correspondence_mobileno">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Email / ईमेल <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="correspondence_email" id="correspondence_email">
+                        <input type="text" class="inputTextField validations" name="correspondence_email" id="correspondence_email">
                     </div>
                 </div>
             </div>
@@ -292,7 +292,7 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="permanentProvince-selected" name="permanent_province"
+                            <input type="text" class="permanentProvince-selected validations" name="permanent_province"
                                 placeholder="Select Province" id="permanent_province">
                             <div class="permanentProvince-search-box">
                                 <input type="text" placeholder="search...">
@@ -321,7 +321,7 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="permanentZone-selected" name="permanent_zone"
+                            <input type="text" class="permanentZone-selected validations" name="permanent_zone"
                                 placeholder="Select Permanent Zone" id="permanent_zone">
                             <div class="permanentZone-search-box">
                                 <input type="text" placeholder="search...">
@@ -350,7 +350,7 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="permanentDistrict-selected" name="permanent_district"
+                            <input type="text" class="permanentDistrict-selected validations" name="permanent_district"
                                 placeholder="Select District" id="permanent_district">
                             <div class="permanentDistrict-search-box">
                                 <input type="text" placeholder="search...">
@@ -359,15 +359,15 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>VDC-Municipality / गाविस -नगरपालिका <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="permanent_vdc" id="permanent_vdc">
+                        <input type="text" class="inputTextField validations" name="permanent_vdc" id="permanent_vdc">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Tole / टोल <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="permanent_tole" id="permanent_tole">
+                        <input type="text" class="inputTextField validations" name="permanent_tole" id="permanent_tole">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Ward No / वार्ड नं. <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="permanent_ward" id="permanent_ward">
+                        <input type="text" class="inputTextField validations" name="permanent_ward" id="permanent_ward">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Block No / ब्लक नं</b></p>
@@ -379,11 +379,11 @@ $zone = new Zone();
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Mobile No / मोबाइल नम्बर (10 digits) <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="permanent_mobileno" id="permanent_mobileno">
+                        <input type="text" class="inputTextField validations" name="permanent_mobileno" id="permanent_mobileno">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Email / ईमेल <span class="red">*</span></b></p>
-                        <input type="email" class="inputTextField" name="permanent_email" id="permanent_email">
+                        <input type="email" class="inputTextField validations" name="permanent_email" id="permanent_email">
                     </div>
                 </div>
             </div>
@@ -396,7 +396,7 @@ $zone = new Zone();
                 <div class="row mb-4">
                     <div class="col-lg-6">
                         <p class="font-22"><b>Citizenship No. <br> नागरिकता नम्बर <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="citizenshipNo" id="citizenshipNo">
+                        <input type="text" class="inputTextField validations" name="citizenshipNo" id="citizenshipNo">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Citizenship Issue District <br> नागरिकता जारी जिल्ला <span
@@ -421,7 +421,7 @@ $zone = new Zone();
                             }
                             ?>
                             </div>
-                            <input type="text" class="citizenshipIssueDistrict-selected" name="citizenshipIssueDistrict"
+                            <input type="text" class="citizenshipIssueDistrict-selected validations" name="citizenshipIssueDistrict"
                                 placeholder="Select District" id="citizenshipIssueDistrict">
                             <div class="citizenshipIssueDistrict-search-box">
                                 <input type="text" placeholder="search...">
@@ -432,28 +432,28 @@ $zone = new Zone();
                         <p class="font-22"><b>Citizenship Issue Date (BS) <br> नागरिकता जारी मिति ( वि . सं ) <span
                                     class="red">*</span></b>
                         </p>
-                        <input type="text" class="inputTextField" name="CitizenshipIssueDateBS"
+                        <input type="text" class="inputTextField validations" name="CitizenshipIssueDateBS"
                             id="CitizenshipIssueDateBS">
                     </div>
                     <div class="col-lg-6">
                         <p class="font-22"><b>Citizenship Issue Date (AD) <br> नागरिकता जारी मिति ( इस्वी सम्बतमा )
                                 <span class="red">*</span></b>
                         </p>
-                        <input type="date" class="inputTextField" name="CitizenshipIssueDateAD"
+                        <input type="date" class="inputTextField validations" name="CitizenshipIssueDateAD"
                             id="CitizenshipIssueDateAD">
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>DOB (BS) <br> जन्म मिति ( वि . सं ) <span class="red">*</span></b></p>
-                        <input type="text" class="inputTextField" name="DOBBS" id="DOBBS">
+                        <input type="text" class="inputTextField validations" name="DOBBS" id="DOBBS">
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>DOB (AD) <br> जन्म मिति ( इस्वी सम्बतमा ) <span class="red">*</span></b>
                         </p>
-                        <input type="date" class="inputTextField" name="DOBAD" id="DOBAD">
+                        <input type="date" class="inputTextField validations" name="DOBAD" id="DOBAD">
                     </div>
                     <div class="col-lg-6 mt-3">
                         <p class="font-22"><b>Gender<br> लिङ्ग <span class="red">*</span></b></p>
-                        <select name="gender" id="gender">
+                        <select name="gender" id="gender" class="validations">
                             <?php
                         $all_gender = $gender->getAllGender();
                         //debugger($all_gender);
@@ -488,7 +488,7 @@ $zone = new Zone();
                     <p class="font-22"><b>Types Of Bank Account <br> बैंक खाताका प्रकारहरू <span
                                 class="red">*</span></b>
                     </p>
-                    <select name="bankAccountType" id="bankAccountType">
+                    <select name="bankAccountType" id="bankAccountType" class="validations">
                         <?php
                         $all_bankAccountType = $bankAccountType->getAllBankAccountType();
                         //debugger($all_bankAccountType);
@@ -511,7 +511,7 @@ $zone = new Zone();
                 <div class="col-lg-6">
                     <p class="font-22"><b>Bank Account Number <br> बैँक खाता नम्बर <span class="red">*</span></b>
                     </p>
-                    <input type="text" class="inputTextField" name="bankAccountno" id="bankAccountno">
+                    <input type="text" class="inputTextField validations" name="bankAccountno" id="bankAccountno">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Name Of Bank <br> बैंकको नाम <span class="red">*</span></b></p>
@@ -534,7 +534,7 @@ $zone = new Zone();
                             }
                             ?>
                         </div>
-                        <input type="text" class="selected" name="bank" Value="Select Bank" id="banks">
+                        <input type="text" class="selected validations" name="bank" placeholder="Select Bank" id="banks" >
                         <div class="search-box">
                             <input type="text" placeholder="search...">
                         </div>
@@ -543,7 +543,7 @@ $zone = new Zone();
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Name Of Branch <br> शाखा को नाम <span class="red">*</span></b></p>
-                    <select disabled name="branch" id="branch">
+                    <select disabled name="branch" id="branch" class="validations">
                     </select>
                 </div>
             </div>
@@ -557,7 +557,7 @@ $zone = new Zone();
                 <div class="col-lg-6">
                     <p class="font-22"><b>Occupation Type / व्यवसायको प्रकार <span class="red">*</span></b>
                     </p>
-                    <select name="occupationType" id="occupationType">
+                    <select name="occupationType" id="occupationType" class="validations">
                         <?php
                                         $all_occupationType = $occupationType->getAllOccupationType();
                                         //debugger($all_occupationType);
@@ -652,23 +652,23 @@ $zone = new Zone();
                     <div class="row mb-4">
                         <div class="col-lg-6">
                             <p class="font-22"><b>Name English <br> नाम <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="nomimeeName" id="nomimeeName">
+                            <input type="text" class="inputTextField " name="nomimeeName" id="nomimeeName">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Father's Name <br> बुवाको नाम <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="nomineeFathersName" id="nomineeFathersName">
+                            <input type="text" class="inputTextField " name="nomineeFathersName" id="nomineeFathersName">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Relationship <br> सम्बन्ध <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="nomineeRelationship"
+                            <input type="text" class="inputTextField " name="nomineeRelationship"
                                 id="nomineeRelationship">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Reference Document Type<br> कागजात प्रकार <span
                                         class="red">*</span></b>
                             </p>
-                            <select name="referenceDocument" id="referenceDocument">
+                            <select name="referenceDocument" id="referenceDocument" class="">
                                 <?php
                         $all_referenceDocument = $referenceDocument->getAllReferenceDocument();
                         //debugger($all_referenceDocument);
@@ -693,7 +693,7 @@ $zone = new Zone();
                                     पासपोर्ट /
                                     जन्म
                                     प्रमाणपत्र) <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="nomineeDoc" id="nomineeDoc">
+                            <input type="text" class="inputTextField " name="nomineeDoc" id="nomineeDoc">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Place of Issue <br> जारी को स्थान <span class="red">*</span></b>
@@ -719,7 +719,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="placeOfIssue-selected" name="placeOfIssue"
+                                <input type="text" class="placeOfIssue-selected " name="placeOfIssue"
                                     placeholder="Select issued District" id="placeOfIssue">
                                 <div class="placeOfIssue-search-box">
                                     <input type="text" placeholder="search...">
@@ -728,11 +728,11 @@ $zone = new Zone();
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Issue Year <span class="red">*</span></b></p>
-                            <input type="date" class="inputTextField" name="nomineeIssueYear" id="nomineeIssueYear">
+                            <input type="date" class="inputTextField " name="nomineeIssueYear" id="nomineeIssueYear">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Age <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="nomineeAge" id="nomineeAge">
+                            <input type="text" class="inputTextField " name="nomineeAge" id="nomineeAge">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Zone <br> अञ्चल <span class="red">*</span></b></p>
@@ -756,7 +756,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="nomineeZone-selected" name="nominee_zone"
+                                <input type="text" class="nomineeZone-selected " name="nominee_zone"
                                     placeholder="Select Zone" id="nominee_zone">
                                 <div class="nomineeZone-search-box">
                                     <input type="text" placeholder="search...">
@@ -786,7 +786,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="nomineeDistrict-selected" name="nominee_district"
+                                <input type="text" class="nomineeDistrict-selected " name="nominee_district"
                                     placeholder="Select District" id="nominee_district">
                                 <div class="nomineeDistrict-search-box">
                                     <input type="text" placeholder="search...">
@@ -800,11 +800,11 @@ $zone = new Zone();
                         <div class="col-lg-6">
                             <p class="font-22"><b>Mobile No<br>मोबाइल नम्बर (10 digits) <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="nominee_mobileno" id="nominee_mobileno">
+                            <input type="text" class="inputTextField " name="nominee_mobileno" id="nominee_mobileno">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Email<br>ईमेल <span class="red">*</span></b></p>
-                            <input type="email" class="inputTextField" name="nominee_email" id="nominee_email">
+                            <input type="email" class="inputTextField " name="nominee_email" id="nominee_email">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Pan No<br>प्यान नम्बर</b></p>
@@ -813,28 +813,28 @@ $zone = new Zone();
                         <div class="col-lg-6">
                             <p class="font-22"><b>Correspondence Address <br> पत्राचार गर्ने ठेगाना <span
                                         class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="nominee_correspondenceAddress"
+                            <input type="text" class="inputTextField " name="nominee_correspondenceAddress"
                                 id="nominee_correspondenceAddress">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Nominee Photo<br>फोटो<span class="red">*</span></b></p>
-                            <input type="file" class="inputTextField" name="nomineePhoto" id="nomineePhoto">
+                            <input type="file" class="inputTextField " name="nomineePhoto" id="nomineePhoto">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Nominee Signature<br>हस्ताक्षर<span class="red">*</span></b>
                             </p>
-                            <input type="file" class="inputTextField" name="nomineeSignature" id="nomineeSignature">
+                            <input type="file" class="inputTextField " name="nomineeSignature" id="nomineeSignature">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Nominee Birth CertificateCitizenship (Front) <br>
                                     जन्म प्रमाणपत्र वा नागरिकता (अगाडि)<span class="red">*</span></b></p>
-                            <input type="file" class="inputTextField" name="nomineeDocumentFront"
+                            <input type="file" class="inputTextField " name="nomineeDocumentFront"
                                 id="nomineeDocumentFront">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Nominee Birth CertificateCitizenship (Back) <br>
                                     जन्म प्रमाणपत्र वा नागरिकता (पछाडि)<span class="red">*</span></b></p>
-                            <input type="file" class="inputTextField" name="nomineeDocumentBack"
+                            <input type="file" class="inputTextField " name="nomineeDocumentBack"
                                 id="nomineeDocumentBack">
                         </div>
                     </div>
@@ -850,37 +850,37 @@ $zone = new Zone();
                 <div class="col-lg-6">
                     <p class="font-22"><b>Applicant Photo <br>
                             आवेदकको फोटो <span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="applicantPhoto" id="applicantPhoto">
+                    <input type="file" class="inputTextField validations" name="applicantPhoto" id="applicantPhoto">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Citizenship of Applicant (Front) <br> जन्मदर्ता प्रमाण (अगाडि)
                             <span class="red">*</span>
-                        </b></p>
-                    <input type="file" class="inputTextField" name="applicantCitizenshipFrontPhoto"
+                        </b></p> 
+                    <input type="file" class="inputTextField validations" name="applicantCitizenshipFrontPhoto"
                         id="applicantCitizenshipFrontPhoto">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Citizenship of Applicant (Front)<br>जन्मदर्ता प्रमाण (अगाडि) <span
                                 class="red">*</span>
                         </b></p>
-                    <input type="file" class="inputTextField" name="applicantCitizenshipBackPhoto"
+                    <input type="file" class="inputTextField validations" name="applicantCitizenshipBackPhoto"
                         id="applicantCitizenshipBackPhoto">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Applicant Thumb Print <br>आवेदकको औंठा छाप<span class="red">*</span></b>
                     </p>
-                    <input type="file" class="inputTextField" name="applicantThumbPhoto" id="applicantThumbPhoto">
+                    <input type="file" class="inputTextField validations"  name="applicantThumbPhoto" id="applicantThumbPhoto">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Location Map of Applicant Residence<br>
                             घर रहेको स्थानको नक्सा <span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="applicantLocationMapPhoto"
+                    <input type="file" class="inputTextField validations" name="applicantLocationMapPhoto"
                         id="applicantLocationMapPhoto">
                 </div>
                 <div class="col-lg-6">
                     <p class="font-22"><b>Applicant Signature<br>
                             आवेदकको हस्ताक्षर <span class="red">*</span></b></p>
-                    <input type="file" class="inputTextField" name="applicantSignaturePhoto"
+                    <input type="file" class="inputTextField validations" name="applicantSignaturePhoto"
                         id="applicantSignaturePhoto">
                 </div>
             </div>
@@ -895,7 +895,7 @@ $zone = new Zone();
                     <div class="row">
                         <div class="col-lg-6">
                             <p class="font-22"><b>First Name <br> नाम <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="guardianFirstName" id="guardianFirstName">
+                            <input type="text" class="inputTextField " name="guardianFirstName" id="guardianFirstName">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Middle Name <br> अभिभावक नाम</b></p>
@@ -904,21 +904,21 @@ $zone = new Zone();
                         <div class="col-lg-6">
                             <p class="font-22"><b>Last Name <br> अभिभावक थर<span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardianLastName" id="guardianLastName">
+                            <input type="text" class="inputTextField " name="guardianLastName" id="guardianLastName">
                         </div>
                         <div class="col-lg-6">
                             <p class="font-22"><b>Relation With Applicant<br>आवेदक संग सम्बन्ध <span
                                         class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardianRelation" id="guardianRelation">
+                            <input type="text" class="inputTextField " name="guardianRelation" id="guardianRelation">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Father Name <br> बुबाको नाम<span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="guardianFatherName" id="guardianFatherName">
+                            <input type="text" class="inputTextField " name="guardianFatherName" id="guardianFatherName">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Grandfather Name <br> हजुरबुबाको नाम<span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="guardianGrandFatherName"
+                            <input type="text" class="inputTextField " name="guardianGrandFatherName"
                                 id="guardianGrandFatherName">
                         </div>
                         <div class="col-lg-6 mt-3">
@@ -928,13 +928,13 @@ $zone = new Zone();
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Citizenship No.<br> नागरिकता नम्बर <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardianCitizenshipNo"
+                            <input type="text" class="inputTextField " name="guardianCitizenshipNo"
                                 id="guardianCitizenshipNo">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Address <br> पत्राचार गर्ने ठेगाना <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardianAddress" id="guardianAddress">
+                            <input type="text" class="inputTextField " name="guardianAddress" id="guardianAddress">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Province <br>प्रदेश<span class="red">*</span></b></p>
@@ -958,7 +958,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="guardianProvince-selected" name="guardian_province"
+                                <input type="text" class="guardianProvince-selected " name="guardian_province"
                                     placeholder="Select Province" id="guardian_province">
                                 <div class="guardianProvince-search-box">
                                     <input type="text" placeholder="search...">
@@ -987,7 +987,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="guardianZone-selected" name="guardian_zone"
+                                <input type="text" class="guardianZone-selected " name="guardian_zone"
                                     placeholder="Select Zone" id="guardian_zone">
                                 <div class="guardianZone-search-box">
                                     <input type="text" placeholder="search...">
@@ -1016,7 +1016,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="guardianDistrict-selected" name="guardian_district"
+                                <input type="text" class="guardianDistrict-selected " name="guardian_district"
                                     placeholder="Select District" id="guardian_district">
                                 <div class="guardianDistrict-search-box">
                                     <input type="text" placeholder="search...">
@@ -1026,25 +1026,25 @@ $zone = new Zone();
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>VDC-Municipality<br> गाविस - नगरपालिका <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardian_vdc" id="guardian_vdc">
+                            <input type="text" class="inputTextField " name="guardian_vdc" id="guardian_vdc">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Block No <br> ब्लक नं <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="guardian_blockNo" id="guardian_blockNo">
+                            <input type="text" class="inputTextField " name="guardian_blockNo" id="guardian_blockNo">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Ward <br> वार्ड नं. <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="guardian_ward" id="guardian_ward">
+                            <input type="text" class="inputTextField " name="guardian_ward" id="guardian_ward">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Phone No <br> फोन नम्बर <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardian_phoneno" id="guardian_phoneno">
+                            <input type="text" class="inputTextField " name="guardian_phoneno" id="guardian_phoneno">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Mobile No <br> मोबाइल नम्बर <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardian_mobileno" id="guardian_mobileno">
+                            <input type="text" class="inputTextField " name="guardian_mobileno" id="guardian_mobileno">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>PAN No <br> प्यान नम्बर</b></p>
@@ -1052,7 +1052,7 @@ $zone = new Zone();
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Email <br> ईमेल <span class="red">*</span></b></p>
-                            <input type="email" class="inputTextField" name="guardian_email" id="guardian_email">
+                            <input type="email" class="inputTextField " name="guardian_email" id="guardian_email">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Citizenship Issued District<br>नागरिकता जारी जिल्ला <span
@@ -1077,7 +1077,7 @@ $zone = new Zone();
                             }
                             ?>
                                 </div>
-                                <input type="text" class="guardianIssuedDistrict-selected"
+                                <input type="text" class="guardianIssuedDistrict-selected "
                                     name="guardian_citizenshiptIssueDistrict" placeholder="Select District"
                                     id="guardian_citizenshiptIssueDistrict">
                                 <div class="guardianIssuedDistrict-search-box">
@@ -1089,53 +1089,53 @@ $zone = new Zone();
                             <p class="font-22"><b>Citizenship Issue Date (BS) <br> नागरिकता जारी मिति ( वि
                                     . सं ) <span class="red">*</span></b>
                             </p>
-                            <input type="text" class="inputTextField" name="guardian_citizenshipIssueDateBS"
+                            <input type="text" class="inputTextField " name="guardian_citizenshipIssueDateBS"
                                 id="guardian_citizenshipIssueDateBS">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Citizenship Issue Date (AD)<br> नागरिकता जारी मिति (
                                     इस्वी सम्बतमा ) <span class="red">*</span></b>
                             </p>
-                            <input type="date" class="inputTextField" name="guardian_citizenshipIssueDateAD"
+                            <input type="date" class="inputTextField " name="guardian_citizenshipIssueDateAD"
                                 id="guardian_citizenshipIssueDateAD">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>DOB (BS) <br> जन्म मिति ( वि . सं ) <span class="red">*</span></b></p>
-                            <input type="text" class="inputTextField" name="guardian_DOBBS" id="guardian_DOBBS">
+                            <input type="text" class="inputTextField " name="guardian_DOBBS" id="guardian_DOBBS">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>DOB (AD) <br> जन्म मिति ( इस्वी सम्बतमा ) <span
                                         class="red">*</span></b>
                             </p>
-                            <input type="date" class="inputTextField" name="guardian_DOBAD" id="guardian_DOBAD">
+                            <input type="date" class="inputTextField " name="guardian_DOBAD" id="guardian_DOBAD">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Guardian Photo<br>
                                     आवेदकको फोटो <span class="red">*</span></b></p>
-                            <input type="file" class="inputTextField" name="guardianPhoto" id="guardianPhoto">
+                            <input type="file" class="inputTextField " name="guardianPhoto" id="guardianPhoto">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Guardian Signature <br> हस्ताक्षर <span class="red">*</span></b>
                             </p>
-                            <input type="file" class="inputTextField" name="guardianSignature" id="guardianSignature">
+                            <input type="file" class="inputTextField " name="guardianSignature" id="guardianSignature">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Guardian Citizenship (Front) <br> नागरिकता (अगाडि) <span
                                         class="red">*</span></b></p>
-                            <input type="file" class="inputTextField" name="guardianCitizenshipFront"
+                            <input type="file" class="inputTextField " name="guardianCitizenshipFront"
                                 id="guardianCitizenshipFront">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Guardian Citizenship (Back) <br> नागरिकता (पछाडि) <span
                                         class="red">*</span></b></p>
-                            <input type="file" class="inputTextField" name="guardianCitizenshipBack"
+                            <input type="file" class="inputTextField " name="guardianCitizenshipBack"
                                 id="guardianCitizenshipBack">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <p class="font-22"><b>Proof of Relationship With Applicant <br> आवेदकसँगको
                                     सम्बन्धको प्रमाण <span class="red">*</span></b>
                             </p>
-                            <input type="file" class="inputTextField" name="guardianProof" id="guardianProof">
+                            <input type="file" class="inputTextField " name="guardianProof" id="guardianProof">
                         </div>
                     </div>
                 </div>
