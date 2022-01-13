@@ -71,3 +71,10 @@
   .step.finish {
     background-color: #134072;
   }
+
+  /* form detail */
+.form_heading{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

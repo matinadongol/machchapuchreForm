@@ -4,7 +4,10 @@ require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/model.php';
 
 ?>
 <div class="container">
-    <h4 class="mt-3">Form List</h4>
+    <div class="form_heading">
+        <h4 class="mt-3">Form List</h4>
+        <a href="exportAllData" class="btn btn-primary my-1">Export All</a>
+    </div>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -14,13 +17,13 @@ require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/model.php';
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        
-            <?php
-                $result = mysqli_query($conn,"SELECT beneficialOwner.firstName, beneficialOwner.middleName, beneficialOwner.lastName, form.id as id from beneficialOwner join form on beneficialOwner.beneficialowner_id = form.id;") or die( mysqli_error($conn));
+
+        <?php
+                $result = mysqli_query($conn,"SELECT form.id, beneficialOwner.firstName, beneficialOwner.middleName, beneficialOwner.lastName from form join beneficialowner on form.beneficialOwner = beneficialOwner.beneficialowner_id;") or die( mysqli_error($conn));
                 $counts = 1;
                 while($row = mysqli_fetch_array($result)) {
             ?>
-            <tbody>
+        <tbody>
             <td> <?php  echo $counts;?></td>
             <td><?php echo $row["id"]; ?></td>
             <td><?php 
@@ -36,14 +39,18 @@ require $_SERVER['DOCUMENT_ROOT'].'/machchapuchreForm/class/model.php';
                 $url='formDetail?id='.$row["id"];
                 ?>
                 <a href="<?php echo $url; ?>" class="btn btn-success">View</a>
+                <?php
+                $url2='exportSingleData?id='.$row["id"];
+                ?>
+                <a  href="<?php echo $url2; ?>" class="btn btn-primary">Export</a>
             </td>
-            </tbody>
-            <?php        
+        </tbody>
+        <?php        
                     
                 $counts++;   
                 }
             ?>
-        
+
     </table>
 </div>
 <?php
